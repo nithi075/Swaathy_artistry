@@ -234,3 +234,25 @@
     right: 12px; bottom: 12px;
   }
 }
+@media (max-width: 768px) {
+
+  .featured-section {
+    padding: 70px 0;
+  }
+
+  .portfolio-header {
+    margin-bottom: 40px;
+  }
+
+  .portfolio-header .tagline {
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    margin-bottom: 14px;
+  }
+
+  .portfolio-header h2 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    line-height: 1.2;
+  }
+}

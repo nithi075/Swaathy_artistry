@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Navbar.css";
+import logo from "../../assets/logo.png"; // Ensure this path is correct based on your project structure
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,15 +31,24 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? "navbar-scroll" : ""}`}>
       <div className="navbar-container">
-        {/* LOGO */}
-        <div className="logo">
-          Click<span>By Korniza</span>
+        
+        {/* LOGO IMAGE - Updated here */}
+        <div className="logo-wrapper">
+          <a href="#hero">
+            <img 
+              src={logo}
+              alt="ClickBy Korniza Logo" 
+              className="logo-img" 
+            />
+          </a>
         </div>
 
         {/* DESKTOP MENU */}
         <div className="desktop-menu">
           {navItems.map((item, index) => (
-            <a href={item.href} key={index}>{item.name}</a>
+            <a href={item.href} key={index} className="nav-link">
+              {item.name}
+            </a>
           ))}
         </div>
 
@@ -47,12 +57,12 @@ export default function Navbar() {
           className={`menu-btn ${menuOpen ? "active" : ""}`} 
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <span></span>
-          <span></span>
+          <div className="btn-line"></div>
+          <div className="btn-line"></div>
         </div>
       </div>
 
-      {/* MOBILE OVERLAY (Inspired by your Image) */}
+      {/* MOBILE OVERLAY */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div 
@@ -61,35 +71,35 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
+            <div className="grain-overlay"></div>
+
             <motion.div 
               className="mobile-menu-container"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ duration: 0.5, ease: [0.19, 1, 0.22, 1] }}
+              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
             >
+           
+
               <div className="mobile-menu-list">
                 {navItems.map((item, index) => (
                   <motion.div 
                     key={index}
                     className="mobile-item-wrapper"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.05 }}
+                    initial={{ opacity: 0, x: 30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 + index * 0.08 }}
                   >
                     <a href={item.href} onClick={() => setMenuOpen(false)}>
-                      {item.name}
-                      {item.hasSub && (
-                        <svg className="chevron" viewBox="0 0 24 24">
-                          <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                        </svg>
-                      )}
+                      <span className="mobile-num">0{index + 1}</span>
+                      <span className="mobile-text">{item.name}</span>
                     </a>
                   </motion.div>
                 ))}
               </div>
               
-              <div className="mobile-footer-simple">
+              <div className="mobile-footer">
                 <div className="mob-socials">
                    <a href="#">INSTAGRAM</a>
                    <a href="#">WHATSAPP</a>

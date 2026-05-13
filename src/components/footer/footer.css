@@ -623,3 +623,278 @@
   }
 
 }
+/* ========================================
+   MOBILE RESPONSIVE CSS ONLY
+======================================== */
+
+@media (max-width: 768px) {
+
+  .footer {
+
+    padding: 75px 5% 28px;
+  }
+
+  /* reduce glow */
+
+  .footer::before {
+
+    width: 320px;
+    height: 320px;
+
+    top: -140px;
+    right: -120px;
+  }
+
+  .footer::after {
+
+    width: 240px;
+    height: 240px;
+
+    bottom: -120px;
+    left: -100px;
+  }
+
+  /* ===============================
+     TOP
+  ================================ */
+
+  .footer-top {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 32px;
+
+    margin-bottom: 40px;
+  }
+
+  /* logo */
+
+  .footer-logo {
+
+    font-size: 2.2rem;
+
+    line-height: 1.1;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 14px;
+  }
+
+  .footer-tagline {
+
+    font-size: 0.58rem;
+
+    letter-spacing: 4px;
+  }
+
+  /* CTA */
+
+  .footer-cta {
+
+    text-align: left;
+  }
+
+  .footer-cta p {
+
+    font-size: 0.78rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+  }
+
+  /* button */
+
+  .footer-main-btn {
+
+    padding: 13px 18px;
+
+    font-size: 0.58rem;
+
+    letter-spacing: 2px;
+
+    gap: 10px;
+
+    animation: none;
+  }
+
+  /* divider */
+
+  .footer-divider {
+
+    margin-bottom: 36px;
+  }
+
+  /* ===============================
+     MIDDLE
+  ================================ */
+
+  .footer-middle {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 28px;
+
+    margin-bottom: 36px;
+  }
+
+  /* nav */
+
+  .footer-nav {
+
+    gap: 18px;
+  }
+
+  .footer-nav a {
+
+    font-size: 0.62rem;
+
+    letter-spacing: 1.5px;
+  }
+
+  /* socials */
+
+  .footer-socials {
+
+    gap: 14px;
+  }
+
+  .social-link {
+
+    width: 42px;
+    height: 42px;
+  }
+
+  /* ===============================
+     BOTTOM
+  ================================ */
+
+  .footer-bottom {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding-top: 20px;
+  }
+
+  .copyright {
+
+    font-size: 0.58rem;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.7;
+  }
+
+  .footer-legal span {
+
+    font-size: 0.56rem;
+
+    letter-spacing: 2px;
+
+    line-height: 1.7;
+  }
+
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+  .footer {
+
+    padding: 65px 4% 24px;
+  }
+
+  .footer-top {
+
+    gap: 26px;
+
+    margin-bottom: 34px;
+  }
+
+  .footer-logo {
+
+    font-size: 1.9rem;
+  }
+
+  .footer-tagline {
+
+    font-size: 0.52rem;
+
+    letter-spacing: 3px;
+  }
+
+  .footer-cta p {
+
+    font-size: 0.72rem;
+  }
+
+  .footer-main-btn {
+
+    padding: 12px 16px;
+
+    font-size: 0.54rem;
+
+    letter-spacing: 1.5px;
+  }
+
+  .footer-nav {
+
+    gap: 14px;
+  }
+
+  .footer-nav a {
+
+    font-size: 0.58rem;
+  }
+
+  .social-link {
+
+    width: 38px;
+    height: 38px;
+  }
+
+  .copyright {
+
+    font-size: 0.54rem;
+  }
+
+  .footer-legal span {
+
+    font-size: 0.52rem;
+  }
+
+}
+
+/* ========================================
+   EXTRA SMALL DEVICES
+======================================== */
+
+@media (max-width: 360px) {
+
+  .footer-logo {
+
+    font-size: 1.7rem;
+  }
+
+  .footer-nav {
+
+    gap: 12px;
+  }
+
+  .footer-nav a {
+
+    font-size: 0.54rem;
+  }
+
+}

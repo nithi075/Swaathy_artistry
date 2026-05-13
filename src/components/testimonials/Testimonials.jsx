@@ -1,9 +1,14 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "./Testimonials.css";
 import client1 from "../../assets/test1.jpg"; 
 import client2 from "../../assets/test2.jpg";
 import client3 from "../../assets/test3.jpg";
 
 export default function Testimonials() {
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+
   const reviews = [
     {
       img: client1,
@@ -25,35 +30,88 @@ export default function Testimonials() {
     }
   ];
 
+  // Auto-slide every 4 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextStep();
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [index]);
+
+  const nextStep = () => {
+    setDirection(1);
+    setIndex((prev) => (prev + 1 === reviews.length ? 0 : prev + 1));
+  };
+
+  // Animation variants for smooth sliding
+  const variants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.9,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+      scale: 1,
+    },
+    exit: (direction) => ({
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.9,
+    }),
+  };
+
   return (
     <section className="testimonials" id="testimonials">
-      <div className="journal-header">
-        <div className="line"></div>
-        <h2 className="serif-title">From The Journal</h2>
-        <div className="line"></div>
-      </div>
+      <motion.div 
+        className="testimonials-header"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
+        <p>TESTIMONIALS</p>
+        <h2>Client <span>Stories</span></h2>
+      </motion.div>
 
-      <div className="journal-container">
-        <div className="journal-scroll-wrapper">
-          {reviews.map((item, index) => (
-            <div className="journal-card" key={index}>
+      <div className="slider-container">
+        <div className="slider-content">
+          <AnimatePresence initial={false} custom={direction} mode="wait">
+            <motion.div
+              key={index}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.6 },
+              }}
+              className="journal-card featured-slide"
+            >
               <div className="journal-img-box">
-                <img src={item.img} alt={item.title} />
-                {/* Floating Title Box */}
+                <img src={reviews[index].img} alt={reviews[index].title} />
                 <div className="floating-title-box">
-                  <h3 className="card-title">{item.title}</h3>
-                  <span className="card-author">{item.author}</span>
+                  <h3 className="card-title">{reviews[index].title}</h3>
+                  <span className="card-author">{reviews[index].author}</span>
                 </div>
               </div>
               <div className="card-body">
-                <p className="card-text">{item.text}</p>
+                <p className="card-text">"{reviews[index].text}"</p>
                 <div className="card-footer">
-                   <span>💬 2</span>
-                   <span>❤️ 5</span>
+                  <div className="dots">
+                    {reviews.map((_, i) => (
+                      <span key={i} className={`dot ${i === index ? "active" : ""}`} />
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>

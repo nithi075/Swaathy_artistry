@@ -604,3 +604,269 @@
   }
 
 }
+/* =========================================
+   MOBILE RESPONSIVE CSS ONLY
+========================================= */
+
+@media (max-width: 768px) {
+
+  .portfolio {
+
+    padding: 85px 0;
+  }
+
+  /* reduce glow */
+
+  .portfolio::before {
+
+    width: 320px;
+    height: 320px;
+
+    top: -140px;
+    right: -120px;
+  }
+
+  .portfolio::after {
+
+    width: 240px;
+    height: 240px;
+
+    bottom: -120px;
+    left: -100px;
+  }
+
+  /* ===============================
+     WRAPPER
+  ================================ */
+
+  .portfolio-wrapper {
+
+    width: 92%;
+  }
+
+  /* ===============================
+     HEADER
+  ================================ */
+
+  .portfolio-header {
+
+    margin-bottom: 50px;
+  }
+
+  .p-tag {
+
+    font-size: 0.6rem;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+  }
+
+  .p-tag::after {
+
+    width: 45px;
+
+    bottom: -8px;
+  }
+
+  /* title */
+
+  .portfolio-title {
+
+    font-size: 2.3rem;
+
+    line-height: 1.12;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+  }
+
+  /* subtext */
+
+  .p-sub {
+
+    font-size: 0.78rem;
+
+    line-height: 1.9;
+
+    max-width: 100%;
+  }
+
+  /* ===============================
+     SLIDER
+  ================================ */
+
+  .portfolio-slider {
+
+    height: 380px;
+
+    margin-bottom: 45px;
+  }
+
+  /* cards */
+
+  .portfolio-card {
+
+    width: 220px;
+    height: 310px;
+  }
+
+  .card-image-wrap {
+
+    border-radius: 14px;
+  }
+
+  .card-image-wrap::after {
+
+    inset: 12px;
+  }
+
+  /* ===============================
+     ACTIVE DETAILS
+  ================================ */
+
+  .active-details {
+
+    width: 92%;
+  }
+
+  .active-category {
+
+    font-size: 0.58rem;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 14px;
+  }
+
+  .active-details h3 {
+
+    font-size: 1.8rem;
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+  }
+
+  .active-details p {
+
+    font-size: 0.76rem;
+
+    line-height: 1.85;
+
+    margin-bottom: 26px;
+  }
+
+  /* button */
+
+  .portfolio-btn {
+
+    font-size: 0.58rem;
+
+    letter-spacing: 2px;
+
+    padding-bottom: 8px;
+  }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .portfolio {
+
+    padding: 70px 0;
+  }
+
+  .portfolio-header {
+
+    margin-bottom: 40px;
+  }
+
+  .portfolio-title {
+
+    font-size: 1.95rem;
+  }
+
+  .p-tag {
+
+    font-size: 0.54rem;
+
+    letter-spacing: 3px;
+  }
+
+  .p-sub {
+
+    font-size: 0.72rem;
+  }
+
+  /* slider */
+
+  .portfolio-slider {
+
+    height: 320px;
+
+    margin-bottom: 35px;
+  }
+
+  .portfolio-card {
+
+    width: 180px;
+    height: 260px;
+  }
+
+  .card-image-wrap::after {
+
+    inset: 10px;
+  }
+
+  /* content */
+
+  .active-details h3 {
+
+    font-size: 1.45rem;
+  }
+
+  .active-details p {
+
+    font-size: 0.7rem;
+
+    line-height: 1.8;
+  }
+
+  .portfolio-btn {
+
+    font-size: 0.54rem;
+
+    letter-spacing: 1.5px;
+  }
+
+}
+
+/* =========================================
+   EXTRA SMALL DEVICES
+========================================= */
+
+@media (max-width: 360px) {
+
+  .portfolio-title {
+
+    font-size: 1.7rem;
+  }
+
+  .portfolio-card {
+
+    width: 160px;
+    height: 230px;
+  }
+
+  .active-details h3 {
+
+    font-size: 1.25rem;
+  }
+
+}

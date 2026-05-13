@@ -497,3 +497,193 @@
   }
 
 }
+/* ========================================
+   MOBILE RESPONSIVE CSS ONLY
+======================================== */
+
+@media (max-width: 768px) {
+
+
+
+  /* glow reduce */
+
+  .insta-container::before {
+
+    width: 320px;
+    height: 320px;
+
+    top: -140px;
+    right: -120px;
+  }
+
+  /* ===============================
+     HEADER
+  ================================ */
+
+  .insta-header {
+
+    margin-bottom: 35px;
+
+    padding: 0 5%;
+  }
+
+  .insta-tag {
+
+    font-size: 0.58rem;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+  }
+
+  .insta-title {
+
+    font-size: 2rem;
+
+    line-height: 1.15;
+
+    letter-spacing: 1px;
+  }
+
+  /* ===============================
+     MAIN LAYOUT
+  ================================ */
+
+
+  /* ===============================
+     IMAGE GRID
+  ================================ */
+
+  
+ 
+
+  /* ===============================
+     GOLD BOX
+  ================================ */
+
+  
+
+  .insta-gold-box::before {
+
+    width: 260px;
+    height: 260px;
+  }
+
+  /* ===============================
+     CONTENT
+  ================================ */
+
+  .gold-content {
+
+    animation: none;
+  }
+
+  .gold-content h3 {
+
+    font-size: 1.3rem;
+
+    margin-bottom: 14px;
+
+    line-height: 1.3;
+  }
+
+  .gold-content p {
+
+    font-size: 0.72rem;
+
+    line-height: 1.9;
+
+    margin-bottom: 24px;
+  }
+
+  /* ===============================
+     BUTTON
+  ================================ */
+
+  .insta-btn {
+
+    font-size: 0.58rem;
+
+    letter-spacing: 2px;
+
+    padding: 11px 16px;
+  }
+
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+  .insta-container {
+
+    padding: 60px 0 0;
+  }
+
+  .insta-header {
+
+    margin-bottom: 28px;
+  }
+
+  .insta-title {
+
+    font-size: 1.7rem;
+  }
+
+  .insta-tag {
+
+    font-size: 0.52rem;
+
+    letter-spacing: 3px;
+  }
+
+  /* image grid */
+
+ 
+  .gold-content h3 {
+
+    font-size: 1.1rem;
+  }
+
+  .gold-content p {
+
+    font-size: 0.68rem;
+
+    line-height: 1.8;
+  }
+
+  .insta-btn {
+
+    font-size: 0.54rem;
+
+    padding: 10px 14px;
+
+    letter-spacing: 1.5px;
+  }
+
+}
+
+/* ========================================
+   EXTRA SMALL DEVICES
+======================================== */
+
+@media (max-width: 360px) {
+
+  .insta-title {
+
+    font-size: 1.5rem;
+  }
+
+  .gold-content h3 {
+
+    font-size: 1rem;
+  }
+
+  .gold-content p {
+
+    font-size: 0.64rem;
+  }
+
+}

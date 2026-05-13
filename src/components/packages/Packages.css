@@ -1,343 +1,500 @@
-.packages{
+/* =========================================
+   PACKAGES SECTION - PREMIUM DARK THEME
+========================================= */
 
-  position:relative;
+:root {
+  --gold: #D4AF37;
+  --gold-light: #F2C94C;
+  --white: #F8F8F8;
+  --black: #050505;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
 
-  padding:140px 8%;
-
-  background:
-  linear-gradient(
-    180deg,
-    #050505 0%,
-    #0d0d0d 100%
-  );
-
-  overflow:hidden;
-
+.packages {
+  position: relative;
+  padding: 140px 8%;
+  background: linear-gradient(180deg, #050505 0%, #0d0d0d 100%);
+  overflow: hidden;
 }
 
 /* ===============================
    HEADER
 ================================ */
 
-.packages-header{
-
-  text-align:center;
-
-  margin-bottom:90px;
-
+.packages-header {
+  text-align: center;
+  margin-bottom: 90px;
 }
 
-.packages-header p{
-
-  color:var(--gold-light);
-
-  letter-spacing:6px;
-
-  font-size:.75rem;
-
-  margin-bottom:24px;
-
+.packages-header p {
+  color: var(--gold-light);
+  letter-spacing: 6px;
+  font-size: 0.75rem;
+  margin-bottom: 24px;
+  text-transform: uppercase;
 }
 
-.packages-header h2{
-
-  font-size:
-  clamp(3rem,5vw,5.5rem);
-
-  color:#fff;
-
-  font-family:var(--heading-font);
-
-  font-weight:500;
-
+.packages-header h2 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  color: #fff;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
 }
 
-.packages-header span{
-
-  color:var(--gold);
-
-  font-family:var(--accent-font);
-
-  font-style:italic;
-
+.packages-header span {
+  color: var(--gold);
+  font-family: 'Great Vibes', cursive;
+  font-style: italic;
+  margin-left: 10px;
 }
 
 /* ===============================
-   CONTAINER
+   CONTAINER & HORIZONTAL SCROLL
 ================================ */
 
-.packages-container{
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(3,1fr);
-
-  gap:40px;
-
+.packages-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  transition: var(--transition);
 }
 
 /* ===============================
-   CARD
+   CARD STYLING
 ================================ */
 
-.package-card{
-
-  position:relative;
-
-  padding:55px 42px;
-
-  background:
-  rgba(255,255,255,.03);
-
-  border:
-  1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(14px);
-
-  overflow:hidden;
-
-  transition:.6s ease;
-
+.package-card {
+  position: relative;
+  padding: 60px 40px;
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
 }
 
-/* glow */
-
-.package-card::before{
-
-  content:"";
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-  radial-gradient(
-    circle at top,
-    rgba(212,175,55,.12),
-    transparent 70%
-  );
-
-  opacity:0;
-
-  transition:.6s ease;
-
+.package-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(212, 175, 55, 0.1), transparent 70%);
+  opacity: 0;
+  transition: var(--transition);
 }
 
-.package-card:hover::before{
-
-  opacity:1;
-
+.package-card:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
 }
 
-.package-card:hover{
-
-  border-color:
-  rgba(212,175,55,.25);
-
-  box-shadow:
-  0 30px 80px rgba(0,0,0,.45);
-
+.package-card:hover::before {
+  opacity: 1;
 }
 
-/* featured */
-
-.featured{
-
-  transform:scale(1.04);
-
-  border:
-  1px solid rgba(212,175,55,.35);
-
+/* Featured / Most Popular Card */
+.featured {
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.02);
 }
 
-/* badge */
-
-.badge{
-
-  position:absolute;
-
-  top:22px;
-  right:22px;
-
-  padding:8px 16px;
-
-  background:var(--gold);
-
-  color:#111;
-
-  font-size:.68rem;
-
-  letter-spacing:2px;
-
-  text-transform:uppercase;
-
-  font-weight:600;
-
+/* Badge */
+.badge {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  padding: 6px 14px;
+  background: var(--gold);
+  color: #000;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
-/* title */
-
-.package-card h3{
-
-  font-size:2rem;
-
-  color:#fff;
-
-  margin-bottom:14px;
-
-  font-family:var(--heading-font);
-
+/* Typography Inside Card */
+.package-card h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 1px;
 }
 
-.subtitle{
-
-  color:
-  rgba(255,255,255,.55);
-
-  font-size:.78rem;
-
-  letter-spacing:3px;
-
-  margin-bottom:40px;
-
+.subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  line-height: 1.5;
 }
 
-/* price */
-
-.price-box{
-
-  display:flex;
-
-  align-items:flex-end;
-
-  gap:8px;
-
-  margin-bottom:42px;
-
+/* Price Section */
+.price-box {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 40px;
 }
 
-.price-box h1{
-
-  color:var(--gold);
-
-  font-size:3rem;
-
-  font-weight:500;
-
+.price-box h1 {
+  color: var(--gold);
+  font-size: 3rem;
+  font-weight: 500;
+  font-family: 'Cormorant Garamond', serif;
 }
 
-.event-text{
-
-  color:
-  rgba(255,255,255,.5);
-
-  margin-bottom:10px;
-
+.event-text {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
 }
 
-/* features */
-
-.features{
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:18px;
-
-  margin-bottom:50px;
-
+/* Features List */
+.features {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 50px;
 }
 
-.features p{
-
-  color:
-  rgba(255,255,255,.72);
-
-  font-size:.92rem;
-
-  line-height:1.7;
-
+.features p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* button */
-
-.package-btn{
-
-  width:100%;
-
-  padding:18px;
-
-  background:none;
-
-  border:
-  1px solid rgba(212,175,55,.35);
-
-  color:#fff;
-
-  letter-spacing:3px;
-
-  text-transform:uppercase;
-
-  cursor:pointer;
-
-  transition:.5s ease;
-
+/* Button */
+.package-btn {
+  width: 100%;
+  padding: 18px;
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #fff;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.4s ease;
 }
 
-.package-btn:hover{
-
-  background:var(--gold);
-
-  color:#111;
-
-  transform:translateY(-3px);
-
+.package-btn:hover {
+  background: var(--gold);
+  color: #000;
+  border-color: var(--gold);
 }
 
-/* ===============================
-   TABLET
-================================ */
+/* =========================================
+   TABLET & MOBILE (Horizontal Scroll)
+========================================= */
 
-@media(max-width:991px){
+@media (max-width: 1024px) {
+  .packages-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px 0 60px 0;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE */
+  }
 
-  .packages-container{
+  /* Hide scrollbar for Chrome/Safari */
+  .packages-container::-webkit-scrollbar {
+    display: none;
+  }
 
-    grid-template-columns:1fr;
+  .package-card {
+    min-width: 85%; /* Shows a peek of the next card */
+    scroll-snap-align: center;
+    transform: none !important; /* Disable hover lifting on mobile for better UX */
+  }
 
+  .featured {
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .packages {
+    padding: 100px 5%;
+  }
+
+  .packages-header h2 {
+    font-size: 2.8rem;
+  }
+
+  .package-card {
+    min-width: 90%;
+    padding: 45px 30px;
+  }
+
+  .price-box h1 {
+    font-size: 2.4rem;
+  }
+}
+/* =========================================
+   MOBILE RESPONSIVE CSS ONLY
+========================================= */
+
+@media (max-width: 768px) {
+
+  .packages {
+
+    padding: 80px 5%;
+  }
+
+  /* ===============================
+     HEADER
+  ================================ */
+
+  .packages-header {
+
+    margin-bottom: 50px;
+  }
+
+  .packages-header p {
+
+    font-size: 0.62rem;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 16px;
+  }
+
+  .packages-header h2 {
+
+    font-size: 2.2rem;
+
+    line-height: 1.15;
+  }
+
+  .packages-header span {
+
+    margin-left: 6px;
+  }
+
+  /* ===============================
+     HORIZONTAL SCROLL
+  ================================ */
+
+  .packages-container {
+
+    display: flex;
+
+    overflow-x: auto;
+
+    gap: 18px;
+
+    padding-bottom: 10px;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+  }
+
+  .packages-container::-webkit-scrollbar {
+
+    display: none;
+  }
+
+  /* ===============================
+     CARD
+  ================================ */
+
+  .package-card {
+
+    min-width: 88%;
+
+    padding: 38px 24px;
+
+    scroll-snap-align: center;
+
+    backdrop-filter: blur(10px);
+
+    transform: none !important;
+  }
+
+  .package-card:hover {
+
+    transform: none;
+  }
+
+  /* featured */
+
+  .featured {
+
+    border-color: rgba(212, 175, 55, 0.28);
+  }
+
+  /* badge */
+
+  .badge {
+
+    top: 18px;
+    right: 18px;
+
+    padding: 5px 10px;
+
+    font-size: 0.52rem;
+
+    letter-spacing: 1.5px;
+  }
+
+  /* ===============================
+     TYPOGRAPHY
+  ================================ */
+
+  .package-card h3 {
+
+    font-size: 1.45rem;
+
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+
+    font-size: 0.62rem;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 28px;
+
+    line-height: 1.6;
+  }
+
+  /* ===============================
+     PRICE
+  ================================ */
+
+  .price-box {
+
+    gap: 8px;
+
+    margin-bottom: 30px;
+  }
+
+  .price-box h1 {
+
+    font-size: 2.2rem;
+  }
+
+  .event-text {
+
+    font-size: 0.7rem;
+  }
+
+  /* ===============================
+     FEATURES
+  ================================ */
+
+  .features {
+
+    gap: 14px;
+
+    margin-bottom: 35px;
+  }
+
+  .features p {
+
+    font-size: 0.78rem;
+
+    line-height: 1.5;
+  }
+
+  /* ===============================
+     BUTTON
+  ================================ */
+
+  .package-btn {
+
+    padding: 15px;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 2px;
   }
 
 }
 
-/* ===============================
-   MOBILE
-================================ */
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
-@media(max-width:768px){
+@media (max-width: 480px) {
 
-  .packages{
+  .packages {
 
-    padding:90px 6%;
-
+    padding: 65px 4%;
   }
 
-  .packages-header{
+  .packages-header {
 
-    margin-bottom:60px;
-
+    margin-bottom: 40px;
   }
 
-  .package-card{
+  .packages-header h2 {
 
-    padding:42px 28px;
-
+    font-size: 1.9rem;
   }
 
-  .price-box h1{
+  .package-card {
 
-    font-size:2.3rem;
+    min-width: 92%;
 
+    padding: 34px 22px;
+  }
+
+  .package-card h3 {
+
+    font-size: 1.3rem;
+  }
+
+  .price-box h1 {
+
+    font-size: 2rem;
+  }
+
+  .features p {
+
+    font-size: 0.74rem;
+  }
+
+  .package-btn {
+
+    font-size: 0.58rem;
+
+    letter-spacing: 1.5px;
+  }
+
+}
+
+/* =========================================
+   EXTRA SMALL DEVICES
+========================================= */
+
+@media (max-width: 360px) {
+
+  .packages-header h2 {
+
+    font-size: 1.7rem;
+  }
+
+  .package-card {
+
+    min-width: 95%;
+  }
+
+  .price-box h1 {
+
+    font-size: 1.8rem;
   }
 
 }

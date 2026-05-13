@@ -1,26 +1,57 @@
+/* =========================================
+   PREMIUM CINEMATIC LOCATION SECTION
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+:root{
+
+  --gold:#D4AF37;
+  --gold-light:#F2C94C;
+
+  --bg-dark:#050505;
+  --bg-soft:#0d0d0d;
+
+  --white:#F5F5F5;
+
+  --text-light:
+  rgba(255,255,255,.68);
+
+}
+
+/* =========================================
+   SECTION
+========================================= */
+
 .location{
 
   position:relative;
 
-  padding:140px 8%;
+  width:100%;
+
+  padding:140px 6%;
+
+  overflow:hidden;
 
   background:
   linear-gradient(
     180deg,
     #050505 0%,
-    #0d0d0d 45%,
+    #0b0b0b 45%,
     #111111 100%
   );
 
-  overflow:hidden;
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
 
   text-align:center;
 
 }
 
-/* ========================================
-   AMBIENT GLOW
-======================================== */
+/* ambient glow */
 
 .location::before{
 
@@ -28,11 +59,11 @@
 
   position:absolute;
 
-  width:700px;
-  height:700px;
+  width:650px;
+  height:650px;
 
-  top:-320px;
-  right:-220px;
+  top:-260px;
+  right:-180px;
 
   background:
   radial-gradient(
@@ -41,7 +72,7 @@
     transparent 72%
   );
 
-  filter:blur(10px);
+  filter:blur(12px);
 
   pointer-events:none;
 
@@ -53,129 +84,202 @@
 
   position:absolute;
 
-  width:500px;
-  height:500px;
+  width:420px;
+  height:420px;
 
-  bottom:-220px;
-  left:-180px;
+  bottom:-180px;
+  left:-120px;
 
   background:
   radial-gradient(
     circle,
     rgba(242,201,76,.05),
-    transparent 70%
+    transparent 72%
   );
 
   pointer-events:none;
 
 }
 
-/* ========================================
+/* =========================================
    TAG
-======================================== */
+========================================= */
 
 .location-tag{
+
+  position:relative;
 
   display:inline-block;
 
   color:var(--gold-light);
 
+  font-family:'Montserrat',sans-serif;
+
   font-size:.72rem;
 
   letter-spacing:6px;
 
-  margin-bottom:24px;
+  text-transform:uppercase;
 
-  position:relative;
+  margin-bottom:24px;
 
   z-index:2;
 
 }
 
-/* ========================================
+/* gold line */
+
+.location-tag::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:50%;
+  bottom:-10px;
+
+  transform:translateX(-50%);
+
+  width:60px;
+  height:1px;
+
+  background:
+  linear-gradient(
+    to right,
+    transparent,
+    var(--gold),
+    transparent
+  );
+
+}
+
+/* =========================================
    TITLE
-======================================== */
+========================================= */
 
 .location h2{
 
-  font-family:var(--heading-font);
+  position:relative;
+
+  font-family:
+  'Cormorant Garamond',
+  serif;
 
   font-size:
   clamp(3rem,5vw,5.5rem);
 
-  color:#fff;
-
   font-weight:500;
+
+  color:var(--white);
 
   letter-spacing:3px;
 
-  margin-bottom:30px;
-
-  position:relative;
+  margin-bottom:26px;
 
   z-index:2;
 
 }
 
-/* ========================================
+/* cinematic shine */
+
+.location h2::after{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-120%;
+
+  width:70%;
+  height:100%;
+
+  background:
+  linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.08),
+    transparent
+  );
+
+  transform:skewX(-18deg);
+
+  animation:titleShine 6s ease infinite;
+
+}
+
+@keyframes titleShine{
+
+  0%{
+    left:-120%;
+  }
+
+  40%{
+    left:130%;
+  }
+
+  100%{
+    left:130%;
+  }
+
+}
+
+/* =========================================
    TEXT
-======================================== */
+========================================= */
 
 .location-text{
 
-  color:
-  rgba(255,255,255,.68);
+  color:var(--text-light);
 
-  line-height:2.1;
+  font-family:'Montserrat',sans-serif;
 
   font-size:.95rem;
 
-  font-weight:300;
+  line-height:2.2;
+
+  letter-spacing:1px;
 
   margin-bottom:70px;
-
-  position:relative;
 
   z-index:2;
 
 }
 
-/* ========================================
+/* =========================================
    MAP
-======================================== */
+========================================= */
 
 .map-container{
 
   position:relative;
 
-  width:100%;
+  width:min(92%,1200px);
 
-  max-width:1200px;
-
-  height:550px;
-
-  margin:auto;
+  height:650px;
 
   overflow:hidden;
 
-  border:
-  1px solid rgba(255,255,255,.08);
+  border-radius:26px;
 
-  background:
-  rgba(255,255,255,.03);
-
-  backdrop-filter:blur(14px);
-
-  transition:
-  transform .8s cubic-bezier(0.16,1,0.3,1),
-  border .6s ease,
-  box-shadow .6s ease;
+  background:#111;
 
   z-index:2;
 
+  border:
+  1px solid
+  rgba(255,255,255,.08);
+
+  box-shadow:
+  0 30px 80px rgba(0,0,0,.45);
+
+  transition:
+  transform 1s cubic-bezier(0.16,1,0.3,1),
+  box-shadow .8s ease;
+
 }
 
-/* luxury border */
+/* luxury frame */
 
 .map-container::before{
 
@@ -183,42 +287,56 @@
 
   position:absolute;
 
-  inset:24px;
+  inset:18px;
 
   border:
-  1px solid rgba(212,175,55,.18);
+  1px solid
+  rgba(212,175,55,.16);
+
+  z-index:3;
 
   pointer-events:none;
 
-  z-index:2;
-
-  transition:.6s ease;
-
 }
 
-/* hover */
+/* gold glow */
+
+.map-container::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at top,
+    rgba(212,175,55,.08),
+    transparent 72%
+  );
+
+  opacity:0;
+
+  transition:.8s ease;
+
+  pointer-events:none;
+
+}
 
 .map-container:hover{
 
   transform:
-  translateY(-10px);
-
-  border-color:
-  rgba(212,175,55,.28);
+  translateY(-8px);
 
   box-shadow:
-  0 30px 80px rgba(0,0,0,.45);
+  0 40px 100px rgba(0,0,0,.6);
 
 }
 
-/* border hover */
+.map-container:hover::after{
 
-.map-container:hover::before{
-
-  inset:18px;
-
-  border-color:
-  rgba(212,175,55,.35);
+  opacity:1;
 
 }
 
@@ -230,138 +348,114 @@
   height:100%;
 
   filter:
-  grayscale(1)
+  grayscale(100%)
   contrast(1.05)
-  brightness(.9);
+  brightness(.88);
 
-  transition:1s ease;
+  transition:
+  filter 1s ease,
+  transform 1.4s ease;
 
 }
-
-/* hover color reveal */
 
 .map-container:hover iframe{
 
   filter:
-  grayscale(.2)
+  grayscale(20%)
   contrast(1.08)
-  brightness(1);
+  brightness(.96);
+
+  transform:scale(1.02);
 
 }
 
-/* ========================================
-   FLOAT ANIMATION
-======================================== */
-
-@keyframes mapFloat{
-
-  0%{
-    transform:translateY(0px);
-  }
-
-  50%{
-    transform:translateY(-6px);
-  }
-
-  100%{
-    transform:translateY(0px);
-  }
-
-}
-
-.map-container{
-
-  animation:
-  mapFloat 7s ease-in-out infinite;
-
-}
-
-/* ========================================
-   TABLET
-======================================== */
-
-@media(max-width:991px){
-
-  .location{
-
-    padding:110px 6%;
-
-  }
-
-  .map-container{
-
-    height:460px;
-
-  }
-
-}
-
-/* ========================================
+/* =========================================
    MOBILE
-======================================== */
+========================================= */
 
 @media(max-width:768px){
 
   .location{
 
     padding:90px 5%;
-
-  }
-
-  .location h2{
-
-    font-size:3rem;
-
-  }
-
-  .location-text{
-
-    font-size:.84rem;
-
-    line-height:1.9;
-
-    margin-bottom:50px;
-
-  }
-
-  .map-container{
-
-    height:340px;
-
-  }
-
-  .map-container::before{
-
-    inset:14px;
-
-  }
-
-}
-
-/* ========================================
-   SMALL MOBILE
-======================================== */
-
-@media(max-width:480px){
-
-  .location h2{
-
-    font-size:2.3rem;
-
   }
 
   .location-tag{
 
-    font-size:.62rem;
+    font-size:.6rem;
 
     letter-spacing:4px;
 
+    margin-bottom:18px;
+  }
+
+  .location h2{
+
+    font-size:2.4rem;
+
+    letter-spacing:1.5px;
+
+    margin-bottom:20px;
+  }
+
+  .location-text{
+
+    font-size:.8rem;
+
+    line-height:2;
+
+    margin-bottom:40px;
   }
 
   .map-container{
 
-    height:280px;
+    width:100%;
 
+    height:420px;
+
+    border-radius:18px;
+  }
+
+  .map-container::before{
+
+    inset:12px;
+  }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:480px){
+
+  .location{
+
+    padding:70px 4%;
+  }
+
+  .location h2{
+
+    font-size:2rem;
+  }
+
+  .location-text{
+
+    font-size:.74rem;
+
+    line-height:1.9;
+  }
+
+  .map-container{
+
+    height:320px;
+
+    border-radius:14px;
+  }
+
+  .map-container::before{
+
+    inset:10px;
   }
 
 }
