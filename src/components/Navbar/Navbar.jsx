@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Navbar.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.jpg";
 
 export default function Navbar() {
 

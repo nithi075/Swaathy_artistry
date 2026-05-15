@@ -653,3 +653,24 @@
   }
 
 }
+.logo-img{
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px){
+
+  .logo-img{
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+}
