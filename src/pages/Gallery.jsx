@@ -12,6 +12,7 @@ import wedding2 from "../assets/img6.jpg";
 import couple from "../assets/img3.jpg";
 import portrait from "../assets/img4.jpg";
 import candid from "../assets/img5.jpg";
+import wedding3 from "../assets/img7.jpg";
 
 export default function Gallery(){
 
@@ -22,7 +23,7 @@ export default function Gallery(){
   const items = [
 
     {
-      title:"Baby Shower",
+      title:"Maternity Magic",
       category:"Celebrations",
       img:wedding2
     },
@@ -49,6 +50,11 @@ export default function Gallery(){
       title:"Bride Photography",
       category:"Moments",
       img:candid
+    },
+    {
+      title:"Engagement Bliss",
+      category:"Love Stories",
+      img:wedding3
     }
 
   ];

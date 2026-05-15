@@ -13,19 +13,19 @@ export default function Testimonials() {
     {
       img: client1,
       title: "MODERN WAREHOUSE WEDDING",
-      author: "BY CHOPRA & NAHAR",
+      author: "BY ANANTHU TABLA & ARYA AJAY",
       text: "Our wedding memories were captured so beautifully. Every image feels timeless and emotional."
     },
     {
       img: client2,
       title: "VINTAGE GARDEN CEREMONY",
-      author: "BY KRISHNA KUMAR & MAHALAXMI",
+      author: "BY ROHIT & MANASVI",
       text: "Truly a wonderful experience. The team was so comfortable to work with and the results are art."
     },
     {
       img: client3,
       title: "CLASSIC ROYAL RECEPTION",
-      author: "BY HARISH KUMAR & HARSHINI",
+      author: "BY PRANAV & ANAGHA",
       text: "The aesthetic sense and the way they play with natural light is just incredible. Highly recommended."
     }
   ];

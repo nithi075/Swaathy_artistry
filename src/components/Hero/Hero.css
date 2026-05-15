@@ -1,17 +1,29 @@
 /* =========================================
-   CINEMATIC LUXURY HERO SECTION
+   PREMIUM EDITORIAL HERO SECTION
+   FRAME MAKERS STUDIO
 ========================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap');
 
 :root{
 
-  --gold:#D4AF37;
-  --gold-light:#F2C94C;
+  --gold:#C5A377;
 
-  --white:#F8F8F8;
+  --gold-light:#D7B58A;
 
-  --black:#050505;
+  --olive:#3B4626;
+
+  --olive-soft:#2B341D;
+
+  --cream:#EEF0E8;
+
+  --off-white:#F5F5F0;
+
+  --white:#FFFFFF;
+
+  --black:#1E2414;
+
+  --text-dark:#2D2D2D;
 
   --transition:
   all 1s cubic-bezier(0.16,1,0.3,1);
@@ -35,7 +47,7 @@ body{
 
   overflow-x:hidden;
 
-  background:var(--black);
+  background:var(--off-white);
 
   font-family:'Montserrat',sans-serif;
 
@@ -65,7 +77,7 @@ body{
 
   justify-content:center;
 
-  background:#050505;
+  background:#1E2414;
 
 }
 
@@ -131,7 +143,6 @@ body{
 /* =========================================
    OVERLAY
 ========================================= */
-
 .hero-overlay{
 
   position:absolute;
@@ -145,20 +156,22 @@ body{
   radial-gradient(
     circle at center,
     rgba(0,0,0,0) 0%,
-    rgba(0,0,0,.45) 42%,
-    rgba(0,0,0,.88) 100%
+    rgba(0,0,0,.18) 45%,
+    rgba(0,0,0,.72) 100%
   ),
 
   linear-gradient(
     to top,
-    rgba(0,0,0,.92) 0%,
-    rgba(0,0,0,.2) 45%,
-    rgba(0,0,0,.45) 100%
+    rgba(0,0,0,.78) 0%,
+    rgba(0,0,0,.12) 45%,
+    rgba(0,0,0,.38) 100%
   );
 
 }
 
-/* cinematic grain */
+/* =========================================
+   EDITORIAL GRAIN
+========================================= */
 
 .hero-overlay::before{
 
@@ -169,14 +182,14 @@ body{
   inset:0;
 
   background-image:
-  url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  url("https://www.transparenttextures.com/patterns/paper-fibers.png");
 
   opacity:.03;
 
 }
 
 /* =========================================
-   GOLD GLOW
+   SOFT GOLD GLOW
 ========================================= */
 
 .hero-overlay::after{
@@ -185,20 +198,20 @@ body{
 
   position:absolute;
 
-  width:600px;
-  height:600px;
+  width:650px;
+  height:650px;
 
-  top:-200px;
-  right:-150px;
+  top:-220px;
+  right:-180px;
 
   background:
   radial-gradient(
     circle,
-    rgba(212,175,55,.08),
+    rgba(197,163,119,.08),
     transparent 70%
   );
 
-  filter:blur(10px);
+  filter:blur(12px);
 
 }
 
@@ -305,8 +318,6 @@ body{
 
 }
 
-/* title reveal */
-
 .title-line{
 
   display:block;
@@ -314,8 +325,6 @@ body{
   overflow:hidden;
 
 }
-
-/* signature accent */
 
 .italic-text{
 
@@ -377,10 +386,11 @@ body{
 
 .btn-primary{
 
-  background:transparent;
+  background:
+  rgba(255,255,255,.04);
 
   border:
-  1px solid rgba(255,255,255,.2);
+  1px solid rgba(255,255,255,.16);
 
   color:var(--white);
 
@@ -404,7 +414,7 @@ body{
 
   transition:var(--transition);
 
-  backdrop-filter:blur(6px);
+  backdrop-filter:blur(8px);
 
 }
 
@@ -412,14 +422,14 @@ body{
 
   background:var(--gold);
 
-  color:black;
+  color:#1E2414;
 
   border-color:var(--gold);
 
   transform:translateY(-4px);
 
   box-shadow:
-  0 12px 40px rgba(212,175,55,.25);
+  0 12px 40px rgba(197,163,119,.24);
 
 }
 
@@ -502,7 +512,9 @@ body{
 
 }
 
-/* mouse line */
+/* =========================================
+   MOUSE LINE
+========================================= */
 
 .mouse-line{
 
@@ -581,29 +593,71 @@ body{
 
   }
 
-  .main-heading{
+  .hero-overlay::after{
 
-    font-size:3.3rem;
+    width:280px;
+    height:280px;
 
-    line-height:1.05;
+    top:-100px;
+    right:-100px;
+
+  }
+
+  .hero-content{
+
+    width:92%;
+
+    padding-top:20px;
+
+  }
+
+  .content-inner{
+
+    max-width:100%;
 
   }
 
   .sub-title{
 
-    font-size:.64rem;
+    font-size:.58rem;
 
     letter-spacing:4px;
+
+    margin-bottom:20px;
+
+  }
+
+  .sub-title::after{
+
+    width:42px;
+
+    bottom:-8px;
+
+  }
+
+  .main-heading{
+
+    font-size:3rem;
+
+    line-height:1.08;
+
+    letter-spacing:.5px;
+
+    margin-bottom:24px;
 
   }
 
   .hero-description{
 
-    font-size:.8rem;
+    max-width:100%;
+
+    font-size:.78rem;
 
     line-height:1.9;
 
-    letter-spacing:1px;
+    letter-spacing:.8px;
+
+    margin:0 auto 36px;
 
   }
 
@@ -611,7 +665,7 @@ body{
 
     flex-direction:column;
 
-    gap:18px;
+    gap:16px;
 
   }
 
@@ -619,7 +673,37 @@ body{
 
     width:100%;
 
-    max-width:300px;
+    max-width:280px;
+
+    padding:15px 24px;
+
+    font-size:.58rem;
+
+    letter-spacing:2px;
+
+    gap:10px;
+
+  }
+
+  .btn-secondary{
+
+    font-size:.58rem;
+
+    letter-spacing:2px;
+
+    padding-bottom:6px;
+
+  }
+
+  .scroll-indicator{
+
+    bottom:20px;
+
+  }
+
+  .mouse-line{
+
+    height:50px;
 
   }
 
@@ -631,242 +715,82 @@ body{
 
 @media(max-width:480px){
 
+  .hero{
+
+    padding:100px 0 60px;
+
+  }
+
+  .sub-title{
+
+    font-size:.52rem;
+
+    letter-spacing:3px;
+
+  }
+
   .main-heading{
 
-    font-size:2.5rem;
+    font-size:2.35rem;
+
+    line-height:1.12;
 
   }
 
   .hero-description{
 
-    font-size:.76rem;
+    font-size:.72rem;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
 
   }
 
-}
-/* =========================================
-   MOBILE RESPONSIVE CSS ONLY
-========================================= */
+  .btn-primary{
 
-@media (max-width: 768px) {
+    max-width:240px;
 
-  .hero {
+    padding:14px 20px;
 
-    min-height: 100svh;
+    font-size:.54rem;
 
-    padding: 110px 0 70px;
+    letter-spacing:1.5px;
+
   }
 
-  /* ===============================
-     OVERLAY GLOW
-  ================================ */
+  .btn-secondary{
 
-  .hero-overlay::after {
+    font-size:.54rem;
 
-    width: 280px;
-    height: 280px;
+    letter-spacing:1.5px;
 
-    top: -100px;
-    right: -100px;
-  }
-
-  /* ===============================
-     CONTENT
-  ================================ */
-
-  .hero-content {
-
-    width: 92%;
-
-    padding-top: 20px;
-  }
-
-  .content-inner {
-
-    max-width: 100%;
-  }
-
-  /* ===============================
-     SUB TITLE
-  ================================ */
-
-  .sub-title {
-
-    font-size: 0.58rem;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 20px;
-  }
-
-  .sub-title::after {
-
-    width: 42px;
-
-    bottom: -8px;
-  }
-
-  /* ===============================
-     MAIN TITLE
-  ================================ */
-
-  .main-heading {
-
-    font-size: 3rem;
-
-    line-height: 1.08;
-
-    letter-spacing: 0.5px;
-
-    margin-bottom: 24px;
-  }
-
-  .italic-text {
-
-    font-size: 1em;
-  }
-
-  /* ===============================
-     DESCRIPTION
-  ================================ */
-
-  .hero-description {
-
-    max-width: 100%;
-
-    font-size: 0.78rem;
-
-    line-height: 1.9;
-
-    letter-spacing: 0.8px;
-
-    margin: 0 auto 36px;
-  }
-
-  /* ===============================
-     BUTTONS
-  ================================ */
-
-  .hero-btns {
-
-    flex-direction: column;
-
-    gap: 16px;
-  }
-
-  .btn-primary {
-
-    width: 100%;
-
-    max-width: 280px;
-
-    padding: 15px 24px;
-
-    font-size: 0.58rem;
-
-    letter-spacing: 2px;
-
-    gap: 10px;
-  }
-
-  .btn-secondary {
-
-    font-size: 0.58rem;
-
-    letter-spacing: 2px;
-
-    padding-bottom: 6px;
-  }
-
-  /* ===============================
-     SCROLL INDICATOR
-  ================================ */
-
-  .scroll-indicator {
-
-    bottom: 20px;
-  }
-
-  .mouse-line {
-
-    height: 50px;
   }
 
 }
 
 /* =========================================
-   SMALL MOBILE
+   EXTRA SMALL
 ========================================= */
 
-@media (max-width: 480px) {
+@media(max-width:360px){
 
-  .hero {
+  .main-heading{
 
-    padding: 100px 0 60px;
+    font-size:2rem;
+
   }
 
-  .sub-title {
+  .hero-description{
 
-    font-size: 0.52rem;
+    font-size:.68rem;
 
-    letter-spacing: 3px;
   }
 
-  .main-heading {
+  .btn-primary{
 
-    font-size: 2.35rem;
+    max-width:220px;
 
-    line-height: 1.12;
-  }
-
-  .hero-description {
-
-    font-size: 0.72rem;
-
-    line-height: 1.8;
-
-    margin-bottom: 30px;
-  }
-
-  .btn-primary {
-
-    max-width: 240px;
-
-    padding: 14px 20px;
-
-    font-size: 0.54rem;
-
-    letter-spacing: 1.5px;
-  }
-
-  .btn-secondary {
-
-    font-size: 0.54rem;
-
-    letter-spacing: 1.5px;
-  }
-
-}
-
-/* =========================================
-   EXTRA SMALL DEVICES
-========================================= */
-
-@media (max-width: 360px) {
-
-  .main-heading {
-
-    font-size: 2rem;
-  }
-
-  .hero-description {
-
-    font-size: 0.68rem;
-  }
-
-  .btn-primary {
-
-    max-width: 220px;
   }
 
 }

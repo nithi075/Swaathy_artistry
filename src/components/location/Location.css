@@ -1,21 +1,31 @@
 /* =========================================
-   PREMIUM CINEMATIC LOCATION SECTION
+   PREMIUM OLIVE LOCATION SECTION
 ========================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
 
 :root{
 
-  --gold:#D4AF37;
-  --gold-light:#F2C94C;
+  --olive:#3B4626;
 
-  --bg-dark:#050505;
-  --bg-soft:#0d0d0d;
+  --olive-dark:#2B341D;
 
-  --white:#F5F5F5;
+  --gold:#C5A377;
 
-  --text-light:
-  rgba(255,255,255,.68);
+  --gold-light:#D7B58A;
+
+  --cream:#EEF0E8;
+
+  --off-white:#F5F5F0;
+
+  --beige:#ECE8DF;
+
+  --white:#FFFFFF;
+
+  --text-dark:#2D2D2D;
+
+  --text-soft:
+  rgba(45,45,45,.68);
 
 }
 
@@ -34,11 +44,18 @@
   overflow:hidden;
 
   background:
+
+  radial-gradient(
+    circle at top right,
+    rgba(197,163,119,.08),
+    transparent 30%
+  ),
+
   linear-gradient(
     180deg,
-    #050505 0%,
-    #0b0b0b 45%,
-    #111111 100%
+    #F5F5F0 0%,
+    #EEF0E8 45%,
+    #ECE8DF 100%
   );
 
   display:flex;
@@ -68,7 +85,7 @@
   background:
   radial-gradient(
     circle,
-    rgba(212,175,55,.08),
+    rgba(197,163,119,.08),
     transparent 72%
   );
 
@@ -93,7 +110,7 @@
   background:
   radial-gradient(
     circle,
-    rgba(242,201,76,.05),
+    rgba(59,70,38,.05),
     transparent 72%
   );
 
@@ -111,7 +128,7 @@
 
   display:inline-block;
 
-  color:var(--gold-light);
+  color:var(--gold);
 
   font-family:'Montserrat',sans-serif;
 
@@ -170,7 +187,7 @@
 
   font-weight:500;
 
-  color:var(--white);
+  color:var(--olive);
 
   letter-spacing:3px;
 
@@ -198,7 +215,7 @@
   linear-gradient(
     90deg,
     transparent,
-    rgba(255,255,255,.08),
+    rgba(255,255,255,.18),
     transparent
   );
 
@@ -230,7 +247,7 @@
 
 .location-text{
 
-  color:var(--text-light);
+  color:var(--text-soft);
 
   font-family:'Montserrat',sans-serif;
 
@@ -262,16 +279,16 @@
 
   border-radius:26px;
 
-  background:#111;
+  background:#ddd;
 
   z-index:2;
 
   border:
   1px solid
-  rgba(255,255,255,.08);
+  rgba(59,70,38,.08);
 
   box-shadow:
-  0 30px 80px rgba(0,0,0,.45);
+  0 30px 80px rgba(0,0,0,.08);
 
   transition:
   transform 1s cubic-bezier(0.16,1,0.3,1),
@@ -291,7 +308,7 @@
 
   border:
   1px solid
-  rgba(212,175,55,.16);
+  rgba(197,163,119,.18);
 
   z-index:3;
 
@@ -312,7 +329,7 @@
   background:
   radial-gradient(
     circle at top,
-    rgba(212,175,55,.08),
+    rgba(197,163,119,.08),
     transparent 72%
   );
 
@@ -330,7 +347,7 @@
   translateY(-8px);
 
   box-shadow:
-  0 40px 100px rgba(0,0,0,.6);
+  0 40px 100px rgba(0,0,0,.12);
 
 }
 
@@ -348,9 +365,9 @@
   height:100%;
 
   filter:
-  grayscale(100%)
-  contrast(1.05)
-  brightness(.88);
+  grayscale(20%)
+  contrast(1.02)
+  brightness(.96);
 
   transition:
   filter 1s ease,
@@ -361,9 +378,9 @@
 .map-container:hover iframe{
 
   filter:
-  grayscale(20%)
-  contrast(1.08)
-  brightness(.96);
+  grayscale(0%)
+  contrast(1.05)
+  brightness(1);
 
   transform:scale(1.02);
 

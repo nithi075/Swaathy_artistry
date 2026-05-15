@@ -7,19 +7,29 @@
 
 :root {
 
-  --bg-dark:#050505;
+  --olive:#3B4626;
 
-  --bg-soft:#0d0d0d;
+  --olive-dark:#2B341D;
 
-  --card:#121212;
+  --gold:#C5A377;
 
-  --gold:#D4AF37;
+  --gold-light:#D7B58A;
 
-  --gold-light:#F2C94C;
+  --cream:#EEF0E8;
 
-  --text-white:#F5F5F5;
+  --off-white:#F5F5F0;
 
-  --text-light:rgba(255,255,255,.68);
+  --beige:#ECE8DF;
+
+  --white:#FFFFFF;
+
+  --text-dark:#2D2D2D;
+
+  --text-soft:
+  rgba(45,45,45,.68);
+
+  --transition:
+  all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 
 }
 
@@ -32,11 +42,18 @@
   position:relative;
 
   background:
+
+  radial-gradient(
+    circle at top right,
+    rgba(197,163,119,.08),
+    transparent 30%
+  ),
+
   linear-gradient(
     180deg,
-    #050505 0%,
-    #0d0d0d 45%,
-    #111111 100%
+    #F5F5F0 0%,
+    #EEF0E8 45%,
+    #ECE8DF 100%
   );
 
   padding:100px 0 0;
@@ -62,7 +79,7 @@
   background:
   radial-gradient(
     circle,
-    rgba(212,175,55,.08),
+    rgba(197,163,119,.08),
     transparent 72%
   );
 
@@ -98,7 +115,7 @@
 
   letter-spacing:6px;
 
-  color:var(--gold-light);
+  color:var(--gold);
 
   margin-bottom:16px;
 
@@ -113,7 +130,7 @@
 
   letter-spacing:2px;
 
-  color:var(--text-white);
+  color:var(--olive);
 
   font-weight:500;
 
@@ -162,7 +179,7 @@
 
   overflow:hidden;
 
-  background:#111;
+  background:#ddd;
 
 }
 
@@ -180,7 +197,7 @@
   filter 1s ease;
 
   filter:
-  brightness(.88)
+  brightness(.92)
   contrast(1.04);
 
 }
@@ -193,7 +210,7 @@
   scale(1.08);
 
   filter:
-  brightness(.96)
+  brightness(.98)
   contrast(1.08);
 
 }
@@ -211,7 +228,7 @@
   background:
   linear-gradient(
     to top,
-    rgba(0,0,0,.4),
+    rgba(43,52,29,.28),
     transparent
   );
 
@@ -228,10 +245,11 @@
   position:relative;
 
   background:
+
   linear-gradient(
     145deg,
-    #111111,
-    #1a1a1a
+    #3B4626,
+    #2B341D
   );
 
   display:flex;
@@ -243,6 +261,9 @@
   padding:30px;
 
   overflow:hidden;
+
+  border-left:
+  1px solid rgba(255,255,255,.06);
 
 }
 
@@ -260,7 +281,7 @@
   background:
   radial-gradient(
     circle,
-    rgba(212,175,55,.12),
+    rgba(197,163,119,.14),
     transparent 70%
   );
 
@@ -299,7 +320,7 @@
 
   letter-spacing:1px;
 
-  color:var(--text-white);
+  color:#fff;
 
 }
 
@@ -313,11 +334,12 @@
 
   margin-bottom:30px;
 
-  opacity:.72;
+  opacity:.82;
 
   line-height:2;
 
-  color:var(--text-light);
+  color:
+  rgba(255,255,255,.72);
 
 }
 
@@ -336,11 +358,13 @@
   justify-content:center;
 
   border:
-  1px solid rgba(212,175,55,.4);
+  1px solid rgba(255,255,255,.12);
+
+  background:#fff;
 
   padding:14px 24px;
 
-  color:var(--gold-light);
+  color:var(--olive);
 
   text-decoration:none;
 
@@ -376,7 +400,7 @@
   linear-gradient(
     120deg,
     transparent,
-    rgba(212,175,55,.18),
+    rgba(255,255,255,.28),
     transparent
   );
 
@@ -396,13 +420,13 @@
 
   background:var(--gold);
 
-  color:#111;
+  color:#1E2414;
 
   transform:
   translateY(-3px);
 
   box-shadow:
-  0 10px 30px rgba(212,175,55,.2);
+  0 10px 30px rgba(197,163,119,.22);
 
 }
 
@@ -435,6 +459,7 @@
   .insta-container {
 
     padding:70px 0 0;
+    margin-bottom: 80px;
 
   }
 
@@ -497,15 +522,12 @@
   }
 
 }
+
 /* ========================================
    MOBILE RESPONSIVE CSS ONLY
 ======================================== */
 
 @media (max-width: 768px) {
-
-
-
-  /* glow reduce */
 
   .insta-container::before {
 
@@ -515,10 +537,6 @@
     top: -140px;
     right: -120px;
   }
-
-  /* ===============================
-     HEADER
-  ================================ */
 
   .insta-header {
 
@@ -545,33 +563,11 @@
     letter-spacing: 1px;
   }
 
-  /* ===============================
-     MAIN LAYOUT
-  ================================ */
-
-
-  /* ===============================
-     IMAGE GRID
-  ================================ */
-
-  
- 
-
-  /* ===============================
-     GOLD BOX
-  ================================ */
-
-  
-
   .insta-gold-box::before {
 
     width: 260px;
     height: 260px;
   }
-
-  /* ===============================
-     CONTENT
-  ================================ */
 
   .gold-content {
 
@@ -595,10 +591,6 @@
 
     margin-bottom: 24px;
   }
-
-  /* ===============================
-     BUTTON
-  ================================ */
 
   .insta-btn {
 
@@ -639,9 +631,6 @@
     letter-spacing: 3px;
   }
 
-  /* image grid */
-
- 
   .gold-content h3 {
 
     font-size: 1.1rem;

@@ -18,7 +18,6 @@ const packagesData = [
     title: "Plus",
     subtitle: "TWO PHOTOGRAPHERS + VIDEOGRAPHY",
     price: "₹89,999",
-    badge: "Most Popular",
     features: [
       "2 Photographers",
       "1 Cinematographer",

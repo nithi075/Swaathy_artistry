@@ -76,7 +76,7 @@ export default function Footer() {
 
             >
 
-              CLICKS BY KORNIZA
+              FRAME MAKERS STUDIO
 
             </motion.h2>
 
@@ -136,7 +136,7 @@ export default function Footer() {
 
               onClick={() =>
                 window.open(
-                  "https://wa.me/919597258078",
+                  "https://wa.me/918136823986",
                   "_blank"
                 )
               }
@@ -226,7 +226,7 @@ export default function Footer() {
 
             <motion.a
 
-              href="https://www.instagram.com/clicksbykorniza/"
+              href="https://www.instagram.com/frame_makers_studio/"
 
               target="_blank"
 
@@ -247,7 +247,7 @@ export default function Footer() {
 
             <motion.a
 
-              href="https://wa.me/919597258078"
+              href="https://wa.me/918136823986"
 
               target="_blank"
 
@@ -301,7 +301,7 @@ export default function Footer() {
 
             © {currentYear}
             {" "}
-            CLICKS BY KORNIZA.
+            FRAME MAKER STUDIO.
             ALL RIGHTS RESERVED.
 
           </p>

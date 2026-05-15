@@ -281,7 +281,7 @@ export default function Hero() {
 
               onClick={() =>
                 window.open(
-                  "https://wa.me/919597258078"
+                  "https://wa.me/918136823986"
                 )
               }
 

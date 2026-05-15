@@ -1,5 +1,5 @@
 /* =========================================
-   PREMIUM CINEMATIC ABOUT SECTION
+   PREMIUM EARTHY LUXURY ABOUT SECTION
 ========================================= */
 
 .about{
@@ -11,9 +11,9 @@
   background:
   linear-gradient(
     180deg,
-    #050505 0%,
-    #0b0b0b 45%,
-    #111111 100%
+    #1E2414 0%,
+    #2B341D 45%,
+    #3B4626 100%
   );
 
   padding:160px 0;
@@ -32,7 +32,7 @@
 }
 
 /* =========================================
-   GOLD AMBIENT GLOW
+   CHAMPAGNE GOLD AMBIENT GLOW
 ========================================= */
 
 .about::before{
@@ -50,7 +50,7 @@
   background:
   radial-gradient(
     circle,
-    rgba(212,175,55,.10),
+    rgba(197,163,119,.12),
     transparent 72%
   );
 
@@ -75,7 +75,7 @@
   background:
   radial-gradient(
     circle,
-    rgba(242,201,76,.06),
+    rgba(197,163,119,.08),
     transparent 70%
   );
 
@@ -110,9 +110,9 @@
   filter 1.2s ease;
 
   filter:
-  brightness(.82)
-  contrast(1.06)
-  saturate(.95);
+  brightness(.88)
+  contrast(1.02)
+  saturate(.92);
 
 }
 
@@ -121,8 +121,8 @@
   transform:scale(1.06);
 
   filter:
-  brightness(.9)
-  contrast(1.08);
+  brightness(.94)
+  contrast(1.04);
 
 }
 
@@ -139,13 +139,13 @@
 
   linear-gradient(
     to right,
-    rgba(5,5,5,0.18),
-    rgba(5,5,5,0.62)
+    rgba(30,36,20,0.18),
+    rgba(30,36,20,0.62)
   ),
 
   linear-gradient(
     to top,
-    rgba(5,5,5,0.86),
+    rgba(30,36,20,0.82),
     transparent 42%
   );
 
@@ -162,7 +162,7 @@
   inset:30px;
 
   border:1px solid
-  rgba(212,175,55,.18);
+  rgba(197,163,119,.22);
 
   pointer-events:none;
 
@@ -190,7 +190,7 @@
 
   display:inline-block;
 
-  color:var(--gold-light);
+  color:#C5A377;
 
   font-size:.74rem;
 
@@ -223,7 +223,7 @@
   background:
   linear-gradient(
     to right,
-    var(--gold),
+    #C5A377,
     transparent
   );
 
@@ -243,7 +243,7 @@
 
   line-height:1.05;
 
-  color:var(--text-white);
+  color:#FFFFFF;
 
   margin-bottom:34px;
 
@@ -257,7 +257,7 @@
 
   font-family:var(--accent-font);
 
-  color:var(--gold);
+  color:#C5A377;
 
   font-style:italic;
 
@@ -273,7 +273,7 @@
 
 .about-sub{
 
-  color:rgba(255,255,255,0.78);
+  color:rgba(245,245,240,0.82);
 
   font-size:1rem;
 
@@ -293,7 +293,7 @@
 
 .about-text{
 
-  color:rgba(255,255,255,0.54);
+  color:rgba(245,245,240,0.62);
 
   font-size:.95rem;
 
@@ -325,7 +325,7 @@
 
   border:none;
 
-  color:var(--text-white);
+  color:#FFFFFF;
 
   font-size:.72rem;
 
@@ -356,7 +356,7 @@
   height:1px;
 
   background:
-  rgba(255,255,255,.16);
+  rgba(245,245,240,.18);
 
   transition:.5s ease;
 
@@ -364,7 +364,7 @@
 
 .about-btn:hover{
 
-  color:var(--gold-light);
+  color:#C5A377;
 
   transform:translateY(-3px);
 
@@ -372,10 +372,10 @@
 
 .about-btn:hover::after{
 
-  background:var(--gold);
+  background:#C5A377;
 
   box-shadow:
-  0 0 14px rgba(212,175,55,.45);
+  0 0 14px rgba(197,163,119,.38);
 
 }
 
@@ -546,249 +546,7 @@
   }
 
 }
-/* =========================================
-   MOBILE RESPONSIVE CSS
-========================================= */
 
-@media(max-width:768px){
-
-  .about{
-
-    grid-template-columns:1fr;
-
-    padding:90px 0;
-
-    gap:45px;
-
-  }
-
-  /* =========================
-     IMAGE
-  ========================= */
-
-  .about-left{
-
-    width:100%;
-
-    height:430px;
-
-  }
-
-  .about-left::after{
-
-    inset:18px;
-
-  }
-
-  .about-left img{
-
-    object-position:center;
-
-  }
-
-  /* =========================
-     CONTENT
-  ========================= */
-
-  .about-right{
-
-    width:90%;
-
-    margin:auto;
-
-    text-align:left;
-
-  }
-
-  /* small label */
-
-  .about-small{
-
-    font-size:.68rem;
-
-    letter-spacing:5px;
-
-    margin-bottom:22px;
-
-  }
-
-  .about-small::after{
-
-    width:55px;
-
-  }
-
-  /* title */
-
-  .about-title{
-
-    font-size:3rem;
-
-    line-height:1.08;
-
-    letter-spacing:2px;
-
-    margin-bottom:24px;
-
-  }
-
-  .about-title span{
-
-    display:inline-block;
-
-  }
-
-  /* sub text */
-
-  .about-sub{
-
-    font-size:.92rem;
-
-    line-height:1.9;
-
-    margin-bottom:26px;
-
-  }
-
-  /* body text */
-
-  .about-text{
-
-    font-size:.84rem;
-
-    line-height:1.95;
-
-    margin-bottom:40px;
-
-  }
-
-  /* button */
-
-  .about-btn{
-
-    font-size:.66rem;
-
-    letter-spacing:3px;
-
-    padding-bottom:10px;
-
-  }
-
-}
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media(max-width:480px){
-
-  .about{
-
-    padding:70px 0;
-
-    gap:35px;
-
-  }
-
-  /* image */
-
-  .about-left{
-
-    height:320px;
-
-  }
-
-  .about-left::after{
-
-    inset:12px;
-
-  }
-
-  /* content */
-
-  .about-right{
-
-    width:92%;
-
-  }
-
-  /* heading */
-
-  .about-title{
-
-    font-size:2.3rem;
-
-    line-height:1.1;
-
-    letter-spacing:1.5px;
-
-  }
-
-  /* texts */
-
-  .about-sub{
-
-    font-size:.84rem;
-
-  }
-
-  .about-text{
-
-    font-size:.78rem;
-
-    line-height:1.85;
-
-  }
-
-  /* label */
-
-  .about-small{
-
-    font-size:.62rem;
-
-    letter-spacing:4px;
-
-  }
-
-  /* button */
-
-  .about-btn{
-
-    font-size:.62rem;
-
-    letter-spacing:2px;
-
-    gap:10px;
-
-  }
-
-}
-
-/* =========================================
-   EXTRA SMALL DEVICES
-========================================= */
-
-@media(max-width:360px){
-
-  .about-title{
-
-    font-size:2rem;
-
-  }
-
-  .about-left{
-
-    height:260px;
-
-  }
-
-  .about-text{
-
-    font-size:.75rem;
-
-  }
-
-}
 /* =========================================
    CINEMATIC TEXT REVEAL
 ========================================= */
@@ -827,7 +585,7 @@
   linear-gradient(
     90deg,
     transparent,
-    rgba(255,255,255,.08),
+    rgba(245,245,240,.08),
     transparent
   );
 
@@ -854,7 +612,7 @@
 }
 
 /* =========================================
-   SMALL LABEL GLOW
+   GOLD PULSE
 ========================================= */
 
 .about-small{
@@ -867,24 +625,24 @@
 
   0%{
     opacity:.7;
-    text-shadow:0 0 0 rgba(212,175,55,0);
+    text-shadow:0 0 0 rgba(197,163,119,0);
   }
 
   50%{
     opacity:1;
     text-shadow:
-    0 0 12px rgba(212,175,55,.35);
+    0 0 12px rgba(197,163,119,.35);
   }
 
   100%{
     opacity:.7;
-    text-shadow:0 0 0 rgba(212,175,55,0);
+    text-shadow:0 0 0 rgba(197,163,119,0);
   }
 
 }
 
 /* =========================================
-   PARAGRAPH SMOOTH APPEAR
+   PARAGRAPH APPEAR
 ========================================= */
 
 .about-sub,
@@ -920,7 +678,7 @@
   linear-gradient(
     120deg,
     transparent,
-    rgba(212,175,55,.12),
+    rgba(197,163,119,.12),
     transparent
   );
 
@@ -935,7 +693,7 @@
 }
 
 /* =========================================
-   IMAGE CINEMATIC FLOAT
+   IMAGE FLOAT
 ========================================= */
 
 .about-left img{
@@ -961,7 +719,7 @@
 }
 
 /* =========================================
-   PREMIUM FADE OVERLAY
+   PREMIUM OVERLAY
 ========================================= */
 
 .fade-overlay{
@@ -986,217 +744,6 @@
 
     animation:none;
 
-  }
-
-}
-/* =========================================
-   MOBILE CSS ONLY
-========================================= */
-
-@media (max-width: 768px) {
-
-  .about {
-
-    grid-template-columns: 1fr;
-    gap: 40px;
-
-    padding: 80px 0;
-  }
-
-  /* glow reduce */
-
-  .about::before {
-
-    width: 320px;
-    height: 320px;
-
-    top: -120px;
-    right: -120px;
-  }
-
-  .about::after {
-
-    width: 220px;
-    height: 220px;
-
-    bottom: -100px;
-    left: -100px;
-  }
-
-  /* =========================
-     IMAGE
-  ========================= */
-
-  .about-left {
-
-    width: 100%;
-    height: 360px;
-  }
-
-  .about-left::after {
-
-    inset: 14px;
-  }
-
-  .about-left img {
-
-    object-position: center;
-    animation: none;
-  }
-
-  /* =========================
-     CONTENT
-  ========================= */
-
-  .about-right {
-
-    width: 90%;
-    margin: auto;
-  }
-
-  /* small heading */
-
-  .about-small {
-
-    font-size: 0.62rem;
-    letter-spacing: 4px;
-
-    margin-bottom: 18px;
-  }
-
-  .about-small::after {
-
-    width: 45px;
-    bottom: -8px;
-  }
-
-  /* title */
-
-  .about-title {
-
-    font-size: 2.3rem;
-
-    line-height: 1.12;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 20px;
-  }
-
-  /* sub */
-
-  .about-sub {
-
-    font-size: 0.86rem;
-
-    line-height: 1.8;
-
-    margin-bottom: 22px;
-  }
-
-  /* body */
-
-  .about-text {
-
-    font-size: 0.78rem;
-
-    line-height: 1.9;
-
-    margin-bottom: 34px;
-  }
-
-  /* button */
-
-  .about-btn {
-
-    font-size: 0.62rem;
-
-    letter-spacing: 2px;
-
-    gap: 10px;
-
-    padding-bottom: 8px;
-  }
-
-}
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 480px) {
-
-  .about {
-
-    padding: 65px 0;
-
-    gap: 30px;
-  }
-
-  .about-left {
-
-    height: 280px;
-  }
-
-  .about-left::after {
-
-    inset: 10px;
-  }
-
-  .about-right {
-
-    width: 92%;
-  }
-
-  .about-title {
-
-    font-size: 1.95rem;
-
-    line-height: 1.15;
-  }
-
-  .about-sub {
-
-    font-size: 0.8rem;
-  }
-
-  .about-text {
-
-    font-size: 0.74rem;
-
-    line-height: 1.8;
-  }
-
-  .about-small {
-
-    font-size: 0.56rem;
-
-    letter-spacing: 3px;
-  }
-
-  .about-btn {
-
-    font-size: 0.58rem;
-
-    letter-spacing: 1.5px;
-  }
-
-}
-
-/* =========================================
-   EXTRA SMALL
-========================================= */
-
-@media (max-width: 360px) {
-
-  .about-title {
-
-    font-size: 1.7rem;
-  }
-
-  .about-left {
-
-    height: 240px;
   }
 
 }

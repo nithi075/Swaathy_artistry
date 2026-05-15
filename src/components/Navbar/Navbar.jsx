@@ -1,114 +1,265 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Navbar.css";
-import logo from "../../assets/logo.png"; // Ensure this path is correct based on your project structure
+import logo from "../../assets/logo.png";
 
 export default function Navbar() {
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  /* =========================================
+     SCROLL EFFECT
+  ========================================= */
 
   useEffect(() => {
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+
+  }, []);
+
+  /* =========================================
+     BODY SCROLL LOCK
+  ========================================= */
+
+  useEffect(() => {
+
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
+
   }, [menuOpen]);
+
+  /* =========================================
+     NAV ITEMS
+  ========================================= */
 
   const navItems = [
     { name: "HOME", href: "#hero" },
-    { name: "ABOUT US", href: "#about", hasSub: true },
-    { name: "DESTINATION", href: "#destination", hasSub: true },
+    { name: "ABOUT US", href: "#about" },
+    { name: "DESTINATION", href: "#destination" },
     { name: "FILMS", href: "#films" },
-    { name: "PHOTOGRAPHY", href: "#photography", hasSub: true },
+    { name: "PHOTOGRAPHY", href: "#photography" },
     { name: "POETRY", href: "#poetry" },
     { name: "BLOG", href: "#blog" },
     { name: "BOOK US", href: "#contact" }
   ];
 
+  /* =========================================
+     JSX
+  ========================================= */
+
   return (
+
     <nav className={`navbar ${scrolled ? "navbar-scroll" : ""}`}>
+
       <div className="navbar-container">
-        
-        {/* LOGO IMAGE - Updated here */}
-        <div className="logo-wrapper">
-          <a href="#hero">
-            <img 
+
+        {/* =========================================
+            LOGO
+        ========================================= */}
+
+        <motion.div
+          className="logo-wrapper"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+
+          <a href="#hero" className="logo-link">
+
+            <img
               src={logo}
-              alt="ClickBy Korniza Logo" 
-              className="logo-img" 
+              alt="ClickBy Korniza Logo"
+              className="logo-img"
             />
+
           </a>
-        </div>
 
-        {/* DESKTOP MENU */}
+        </motion.div>
+
+        {/* =========================================
+            DESKTOP MENU
+        ========================================= */}
+
         <div className="desktop-menu">
+
           {navItems.map((item, index) => (
-            <a href={item.href} key={index} className="nav-link">
-              {item.name}
-            </a>
+
+            <motion.a
+              href={item.href}
+              key={index}
+              className="nav-link"
+
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+
+              transition={{
+                delay: index * 0.08,
+                duration: 0.6
+              }}
+            >
+
+              <span>{item.name}</span>
+
+            </motion.a>
+
           ))}
+
         </div>
 
-        {/* HAMBURGER BUTTON */}
-        <div 
-          className={`menu-btn ${menuOpen ? "active" : ""}`} 
+        {/* =========================================
+            MENU BUTTON
+        ========================================= */}
+
+        <div
+          className={`menu-btn ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
+
           <div className="btn-line"></div>
           <div className="btn-line"></div>
+
         </div>
+
       </div>
 
-      {/* MOBILE OVERLAY */}
+      {/* =========================================
+          MOBILE MENU
+      ========================================= */}
+
       <AnimatePresence>
+
         {menuOpen && (
-          <motion.div 
+
+          <motion.div
             className="mobile-overlay"
+
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+
+            transition={{ duration: 0.4 }}
           >
+
             <div className="grain-overlay"></div>
 
-            <motion.div 
+            {/* =========================================
+                MOBILE MENU PANEL
+            ========================================= */}
+
+            <motion.div
               className="mobile-menu-container"
+
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
+
+              transition={{
+                duration: 0.8,
+                ease: [0.19, 1, 0.22, 1]
+              }}
             >
-           
+
+              {/* =========================================
+                  MOBILE TOP
+              ========================================= */}
+
+              <div className="mobile-logo-area">
+
+               
+
+              </div>
+
+              {/* =========================================
+                  MOBILE LINKS
+              ========================================= */}
 
               <div className="mobile-menu-list">
+
                 {navItems.map((item, index) => (
-                  <motion.div 
+
+                  <motion.div
                     key={index}
                     className="mobile-item-wrapper"
-                    initial={{ opacity: 0, x: 30 }}
+
+                    initial={{ opacity: 0, x: 40 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 + index * 0.08 }}
+
+                    transition={{
+                      delay: 0.1 + index * 0.08,
+                      duration: 0.6
+                    }}
                   >
-                    <a href={item.href} onClick={() => setMenuOpen(false)}>
-                      <span className="mobile-num">0{index + 1}</span>
-                      <span className="mobile-text">{item.name}</span>
+
+                    <a
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                    >
+
+                      <span className="mobile-num">
+                        0{index + 1}
+                      </span>
+
+                      <span className="mobile-text">
+                        {item.name}
+                      </span>
+
+                      <svg
+                        className="chevron"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M9 6l6 6-6 6" />
+                      </svg>
+
                     </a>
+
                   </motion.div>
+
                 ))}
+
               </div>
-              
+
+              {/* =========================================
+                  MOBILE FOOTER
+              ========================================= */}
+
               <div className="mobile-footer">
-                <div className="mob-socials">
-                   <a href="#">INSTAGRAM</a>
-                   <a href="#">WHATSAPP</a>
+
+                <div className="footer-label">
+                  CONNECT WITH US
                 </div>
+
+                <div className="mob-socials">
+
+                  <a href="#">
+                    INSTAGRAM
+                  </a>
+
+                  <a href="#">
+                    WHATSAPP
+                  </a>
+
+                  <a href="#">
+                    YOUTUBE
+                  </a>
+
+                </div>
+
               </div>
+
             </motion.div>
+
           </motion.div>
+
         )}
+
       </AnimatePresence>
+
     </nav>
   );
 }

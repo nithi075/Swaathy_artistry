@@ -1,14 +1,47 @@
 :root {
-  --gold: #b39055;
-  --white: #ffffff;
-  --black: #0a0a0a;
-  --transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  --gold:#C5A377;
+
+  --gold-light:#D7B58A;
+
+  --olive:#3B4626;
+
+  --olive-dark:#2B341D;
+
+  --cream:#EEF0E8;
+
+  --off-white:#F5F5F0;
+
+  --white:#FFFFFF;
+
+  --black:#1E2414;
+
+  --text-dark:#2D2D2D;
+
+  --transition:
+  all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
 }
 
 .testimonials {
   position: relative;
   width: 100%;
-  background: #050505;
+
+  background:
+
+  radial-gradient(
+    circle at top right,
+    rgba(197,163,119,.08),
+    transparent 30%
+  ),
+
+  linear-gradient(
+    180deg,
+    #3B4626 0%,
+    #2B341D 55%,
+    #1E2414 100%
+  );
+
   padding: 140px 0;
   overflow: hidden;
 }
@@ -33,7 +66,7 @@
 .testimonials-header h2 {
   font-size: clamp(2.5rem, 5vw, 5rem);
   color: #fff;
-  font-family: 'Cormorant Garamond', serif; /* Or your preferred serif font */
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
 }
 
@@ -50,21 +83,21 @@
 
 .journal-container {
   width: 100%;
-  padding-left: 6%; /* Peeking effect start */
+  padding-left: 6%;
 }
 
 .journal-scroll-wrapper {
-  display: flex; /* Switched from grid to flex for horizontal scroll */
+  display: flex;
   gap: 30px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding: 20px 0 60px;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .journal-scroll-wrapper::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  display: none;
 }
 
 /* =========================================
@@ -72,11 +105,14 @@
 ========================================= */
 
 .journal-card {
-  min-width: 450px; /* Width for desktop */
+  min-width: 450px;
   scroll-snap-align: center;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
   transition: var(--transition);
+  backdrop-filter: blur(10px);
+  box-shadow:
+  0 12px 40px rgba(0,0,0,.18);
 }
 
 .journal-img-box {
@@ -101,7 +137,12 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%);
+  background:
+  linear-gradient(
+    to top,
+    rgba(30,36,20,.82),
+    transparent 50%
+  );
 }
 
 .floating-title-box {
@@ -130,7 +171,7 @@
 }
 
 .card-text {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255,255,255,.68);
   font-size: 0.9rem;
   line-height: 1.8;
   margin-bottom: 30px;
@@ -139,7 +180,7 @@
 .card-footer {
   display: flex;
   gap: 20px;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255,255,255,.42);
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -155,7 +196,7 @@
   }
 
   .journal-card {
-    min-width: 85vw; /* Card takes most of the screen width on mobile */
+    min-width: 85vw;
   }
 
   .journal-img-box {
@@ -166,18 +207,19 @@
     font-size: 1.5rem;
   }
 }
+
 .slider-container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   perspective: 1000px;
-  min-height: 700px; /* Adjust based on card height */
+  min-height: 700px;
 }
 
 .slider-content {
   position: relative;
-  width: min(90%, 600px); /* Desktop width */
+  width: min(90%, 600px);
   display: flex;
   justify-content: center;
 }
@@ -189,6 +231,7 @@
 }
 
 /* Dots Navigation */
+
 .dots {
   display: flex;
   gap: 10px;
@@ -198,7 +241,7 @@
 .dot {
   width: 8px;
   height: 2px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255,255,255,.18);
   transition: 0.4s;
 }
 
@@ -208,15 +251,17 @@
 }
 
 /* Mobile Adjustments */
+
 @media (max-width: 768px) {
   .slider-content {
     width: 90%;
   }
-  
+
   .slider-container {
     min-height: 600px;
   }
 }
+
 /* =========================================
    MOBILE RESPONSIVE CSS ONLY
 ========================================= */
@@ -227,10 +272,6 @@
 
     padding: 80px 0;
   }
-
-  /* ===============================
-     HEADER
-  ================================ */
 
   .testimonials-header {
 
@@ -260,10 +301,6 @@
     margin-left: 6px;
   }
 
-  /* ===============================
-     CONTAINER
-  ================================ */
-
   .journal-container {
 
     padding-left: 5%;
@@ -276,23 +313,17 @@
     padding: 10px 0 30px;
   }
 
-  /* ===============================
-     CARD
-  ================================ */
-
   .journal-card {
 
     min-width: 88vw;
 
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,.08);
   }
 
   .journal-img-box {
 
     height: 360px;
   }
-
-  /* floating title */
 
   .floating-title-box {
 
@@ -313,10 +344,6 @@
 
     letter-spacing: 2px;
   }
-
-  /* ===============================
-     CARD BODY
-  ================================ */
 
   .card-body {
 
@@ -343,10 +370,6 @@
     flex-wrap: wrap;
   }
 
-  /* ===============================
-     SLIDER
-  ================================ */
-
   .slider-container {
 
     min-height: auto;
@@ -363,8 +386,6 @@
 
     width: 100%;
   }
-
-  /* dots */
 
   .dots {
 

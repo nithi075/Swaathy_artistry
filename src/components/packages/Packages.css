@@ -1,425 +1,625 @@
 /* =========================================
-   PACKAGES SECTION - PREMIUM DARK THEME
+   PACKAGES SECTION
+   PREMIUM OLIVE EDITORIAL VERSION
 ========================================= */
 
-:root {
-  --gold: #D4AF37;
-  --gold-light: #F2C94C;
-  --white: #F8F8F8;
-  --black: #050505;
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+:root{
+
+  --primary:#3B4626;
+
+  --primary-dark:#2B341D;
+
+  --gold:#C5A377;
+
+  --gold-light:#D7B58A;
+
+  --white:#FFFFFF;
+
+  --soft-bg:#F5F5F0;
+
+  --soft-cream:#EEF0E8;
+
+  --beige:#ECE8DF;
+
+  --deep-text:#2D2D2D;
+
+  --card-bg:
+  rgba(255,255,255,.82);
+
+  --card-border:
+  rgba(59,70,38,.08);
+
+  --transition:
+  all .7s cubic-bezier(0.16,1,0.3,1);
+
 }
 
-.packages {
-  position: relative;
-  padding: 140px 8%;
-  background: linear-gradient(180deg, #050505 0%, #0d0d0d 100%);
-  overflow: hidden;
+/* =========================================
+   SECTION
+========================================= */
+
+.packages{
+
+  position:relative;
+
+  padding:140px 8%;
+
+  overflow:hidden;
+
+  background:
+
+  radial-gradient(
+    circle at top right,
+    rgba(197,163,119,.08),
+    transparent 30%
+  ),
+
+  linear-gradient(
+    180deg,
+    #F5F5F0 0%,
+    #EEF0E8 45%,
+    #ECE8DF 100%
+  );
+
 }
 
-/* ===============================
+/* =========================================
+   SOFT TEXTURE
+========================================= */
+
+.packages::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  opacity:.025;
+
+  background-image:
+  url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+
+}
+
+/* soft glow */
+
+.packages::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:600px;
+  height:600px;
+
+  top:-240px;
+  right:-180px;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(59,70,38,.05),
+    transparent 72%
+  );
+
+  filter:blur(20px);
+
+  pointer-events:none;
+
+}
+
+/* =========================================
    HEADER
-================================ */
+========================================= */
 
-.packages-header {
-  text-align: center;
-  margin-bottom: 90px;
+.packages-header{
+
+  text-align:center;
+
+  margin-bottom:90px;
+
+  position:relative;
+
+  z-index:2;
+
 }
 
-.packages-header p {
-  color: var(--gold-light);
-  letter-spacing: 6px;
-  font-size: 0.75rem;
-  margin-bottom: 24px;
-  text-transform: uppercase;
+.packages-header p{
+
+  color:var(--gold);
+
+  letter-spacing:6px;
+
+  font-size:.72rem;
+
+  margin-bottom:22px;
+
+  text-transform:uppercase;
+
+  font-weight:600;
+
+  position:relative;
+
+  display:inline-block;
+
 }
 
-.packages-header h2 {
-  font-size: clamp(2.5rem, 5vw, 5rem);
-  color: #fff;
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
+/* gold line */
+
+.packages-header p::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:50%;
+  transform:translateX(-50%);
+
+  bottom:-10px;
+
+  width:60px;
+  height:1px;
+
+  background:
+  linear-gradient(
+    to right,
+    transparent,
+    var(--gold),
+    transparent
+  );
+
 }
 
-.packages-header span {
-  color: var(--gold);
-  font-family: 'Great Vibes', cursive;
-  font-style: italic;
-  margin-left: 10px;
+.packages-header h2{
+
+  font-size:
+  clamp(2.8rem,5vw,5rem);
+
+  color:var(--primary);
+
+  font-family:
+  'Cormorant Garamond',serif;
+
+  font-weight:500;
+
+  line-height:1.08;
+
+  letter-spacing:2px;
+
 }
 
-/* ===============================
-   CONTAINER & HORIZONTAL SCROLL
-================================ */
+.packages-header span{
 
-.packages-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  transition: var(--transition);
-}
+  color:var(--gold);
 
-/* ===============================
-   CARD STYLING
-================================ */
+  font-family:
+  'Great Vibes',cursive;
 
-.package-card {
-  position: relative;
-  padding: 60px 40px;
-  background: var(--card-bg);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px);
-  display: flex;
-  flex-direction: column;
-  transition: var(--transition);
-}
+  text-transform:none;
 
-.package-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top, rgba(212, 175, 55, 0.1), transparent 70%);
-  opacity: 0;
-  transition: var(--transition);
-}
-
-.package-card:hover {
-  border-color: rgba(212, 175, 55, 0.3);
-  transform: translateY(-10px);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
-}
-
-.package-card:hover::before {
-  opacity: 1;
-}
-
-/* Featured / Most Popular Card */
-.featured {
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  background: rgba(212, 175, 55, 0.02);
-}
-
-/* Badge */
-.badge {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  padding: 6px 14px;
-  background: var(--gold);
-  color: #000;
-  font-size: 0.6rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-/* Typography Inside Card */
-.package-card h3 {
-  font-size: 1.8rem;
-  color: #fff;
-  margin-bottom: 10px;
-  font-family: 'Cormorant Garamond', serif;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  margin-bottom: 35px;
-  text-transform: uppercase;
-  line-height: 1.5;
-}
-
-/* Price Section */
-.price-box {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  margin-bottom: 40px;
-}
-
-.price-box h1 {
-  color: var(--gold);
-  font-size: 3rem;
-  font-weight: 500;
-  font-family: 'Cormorant Garamond', serif;
-}
-
-.event-text {
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.8rem;
-}
-
-/* Features List */
-.features {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 50px;
-}
-
-.features p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.85rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Button */
-.package-btn {
-  width: 100%;
-  padding: 18px;
-  background: transparent;
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  color: #fff;
-  font-size: 0.7rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: 0.4s ease;
-}
-
-.package-btn:hover {
-  background: var(--gold);
-  color: #000;
-  border-color: var(--gold);
 }
 
 /* =========================================
-   TABLET & MOBILE (Horizontal Scroll)
+   CONTAINER
 ========================================= */
 
-@media (max-width: 1024px) {
-  .packages-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding: 20px 0 60px 0;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE */
-  }
+.packages-container{
 
-  /* Hide scrollbar for Chrome/Safari */
-  .packages-container::-webkit-scrollbar {
-    display: none;
-  }
+  display:grid;
 
-  .package-card {
-    min-width: 85%; /* Shows a peek of the next card */
-    scroll-snap-align: center;
-    transform: none !important; /* Disable hover lifting on mobile for better UX */
-  }
+  grid-template-columns:
+  repeat(3,1fr);
 
-  .featured {
-    transform: none;
-  }
+  gap:30px;
+
+  position:relative;
+
+  z-index:2;
+
 }
 
-@media (max-width: 600px) {
-  .packages {
-    padding: 100px 5%;
-  }
-
-  .packages-header h2 {
-    font-size: 2.8rem;
-  }
-
-  .package-card {
-    min-width: 90%;
-    padding: 45px 30px;
-  }
-
-  .price-box h1 {
-    font-size: 2.4rem;
-  }
-}
 /* =========================================
-   MOBILE RESPONSIVE CSS ONLY
+   CARD
 ========================================= */
 
-@media (max-width: 768px) {
+.package-card{
 
-  .packages {
+  position:relative;
 
-    padding: 80px 5%;
+  padding:60px 40px;
+
+  background:var(--card-bg);
+
+  border:
+  1px solid rgba(59,70,38,.08);
+
+  backdrop-filter:blur(14px);
+
+  border-radius:0;
+
+  overflow:hidden;
+
+  display:flex;
+
+  flex-direction:column;
+
+  transition:var(--transition);
+
+  box-shadow:
+  0 12px 40px rgba(0,0,0,.05);
+
+}
+
+/* top gold line */
+
+.package-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:0;
+
+  width:100%;
+  height:2px;
+
+  background:
+  linear-gradient(
+    to right,
+    transparent,
+    var(--gold),
+    transparent
+  );
+
+  opacity:.8;
+
+}
+
+/* hover glow */
+
+.package-card::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+  radial-gradient(
+    circle at top,
+    rgba(197,163,119,.08),
+    transparent 70%
+  );
+
+  opacity:0;
+
+  transition:var(--transition);
+
+}
+
+.package-card:hover{
+
+  transform:
+  translateY(-10px);
+
+  border-color:
+  rgba(197,163,119,.24);
+
+  box-shadow:
+
+  0 25px 70px rgba(0,0,0,.08),
+
+  0 0 30px rgba(197,163,119,.08);
+
+}
+
+.package-card:hover::after{
+
+  opacity:1;
+
+}
+
+/* =========================================
+   FEATURED CARD
+========================================= */
+
+.featured{
+
+  background:
+
+  linear-gradient(
+    180deg,
+    rgba(197,163,119,.08),
+    rgba(255,255,255,.95)
+  );
+
+  border:
+  1px solid rgba(197,163,119,.22);
+
+}
+
+/* =========================================
+   BADGE
+========================================= */
+
+.badge{
+
+  position:absolute;
+
+  top:24px;
+  right:24px;
+
+  padding:7px 15px;
+
+  background:var(--primary);
+
+  color:#fff;
+
+  font-size:.58rem;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  font-weight:700;
+
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+.package-card h3{
+
+  font-size:1.9rem;
+
+  color:var(--primary);
+
+  margin-bottom:10px;
+
+  font-family:
+  'Cormorant Garamond',serif;
+
+  letter-spacing:1px;
+
+}
+
+.subtitle{
+
+  color:
+  rgba(45,45,45,.58);
+
+  font-size:.7rem;
+
+  letter-spacing:2px;
+
+  margin-bottom:35px;
+
+  text-transform:uppercase;
+
+  line-height:1.6;
+
+}
+
+/* =========================================
+   PRICE
+========================================= */
+
+.price-box{
+
+  display:flex;
+
+  align-items:baseline;
+
+  gap:10px;
+
+  margin-bottom:40px;
+
+}
+
+.price-box h1{
+
+  color:var(--gold);
+
+  font-size:3rem;
+
+  font-weight:600;
+
+  font-family:
+  'Cormorant Garamond',serif;
+
+}
+
+.event-text{
+
+  color:
+  rgba(45,45,45,.5);
+
+  font-size:.8rem;
+
+}
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.features{
+
+  flex:1;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:16px;
+
+  margin-bottom:50px;
+
+}
+
+.features p{
+
+  color:
+  rgba(45,45,45,.78);
+
+  font-size:.84rem;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  line-height:1.7;
+
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.package-btn{
+
+  width:100%;
+
+  padding:18px;
+
+  background:var(--primary);
+
+  border:
+  1px solid var(--primary);
+
+  color:#fff;
+
+  font-size:.68rem;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+
+  cursor:pointer;
+
+  transition:var(--transition);
+
+  font-weight:600;
+
+}
+
+.package-btn:hover{
+
+  background:var(--primary-dark);
+
+  color:#fff;
+
+  border-color:var(--primary-dark);
+
+  transform:translateY(-2px);
+
+  box-shadow:
+  0 12px 30px rgba(59,70,38,.16);
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width:1024px){
+
+  .packages-container{
+
+    display:flex;
+
+    overflow-x:auto;
+
+    gap:20px;
+
+    padding-bottom:20px;
+
+    scroll-snap-type:x mandatory;
+
+    scrollbar-width:none;
+
   }
 
-  /* ===============================
-     HEADER
-  ================================ */
+  .packages-container::-webkit-scrollbar{
 
-  .packages-header {
+    display:none;
 
-    margin-bottom: 50px;
   }
 
-  .packages-header p {
+  .package-card{
 
-    font-size: 0.62rem;
+    min-width:85%;
 
-    letter-spacing: 4px;
+    scroll-snap-align:center;
 
-    margin-bottom: 16px;
   }
 
-  .packages-header h2 {
+}
 
-    font-size: 2.2rem;
+/* =========================================
+   MOBILE
+========================================= */
 
-    line-height: 1.15;
+@media(max-width:768px){
+
+  .packages{
+
+    padding:90px 5%;
+
   }
 
-  .packages-header span {
+  .packages-header{
 
-    margin-left: 6px;
+    margin-bottom:50px;
+
   }
 
-  /* ===============================
-     HORIZONTAL SCROLL
-  ================================ */
+  .packages-header h2{
 
-  .packages-container {
+    font-size:2.2rem;
 
-    display: flex;
-
-    overflow-x: auto;
-
-    gap: 18px;
-
-    padding-bottom: 10px;
-
-    scroll-snap-type: x mandatory;
-
-    scrollbar-width: none;
-
-    -ms-overflow-style: none;
   }
 
-  .packages-container::-webkit-scrollbar {
+  .package-card{
 
-    display: none;
+    min-width:88%;
+
+    padding:38px 24px;
+
   }
 
-  /* ===============================
-     CARD
-  ================================ */
+  .package-card h3{
 
-  .package-card {
+    font-size:1.45rem;
 
-    min-width: 88%;
-
-    padding: 38px 24px;
-
-    scroll-snap-align: center;
-
-    backdrop-filter: blur(10px);
-
-    transform: none !important;
   }
 
-  .package-card:hover {
+  .price-box h1{
 
-    transform: none;
+    font-size:2.2rem;
+
   }
 
-  /* featured */
+  .features p{
 
-  .featured {
+    font-size:.78rem;
 
-    border-color: rgba(212, 175, 55, 0.28);
   }
 
-  /* badge */
+  .package-btn{
 
-  .badge {
+    padding:15px;
 
-    top: 18px;
-    right: 18px;
+    font-size:.6rem;
 
-    padding: 5px 10px;
+    letter-spacing:2px;
 
-    font-size: 0.52rem;
-
-    letter-spacing: 1.5px;
-  }
-
-  /* ===============================
-     TYPOGRAPHY
-  ================================ */
-
-  .package-card h3 {
-
-    font-size: 1.45rem;
-
-    margin-bottom: 8px;
-  }
-
-  .subtitle {
-
-    font-size: 0.62rem;
-
-    letter-spacing: 1.5px;
-
-    margin-bottom: 28px;
-
-    line-height: 1.6;
-  }
-
-  /* ===============================
-     PRICE
-  ================================ */
-
-  .price-box {
-
-    gap: 8px;
-
-    margin-bottom: 30px;
-  }
-
-  .price-box h1 {
-
-    font-size: 2.2rem;
-  }
-
-  .event-text {
-
-    font-size: 0.7rem;
-  }
-
-  /* ===============================
-     FEATURES
-  ================================ */
-
-  .features {
-
-    gap: 14px;
-
-    margin-bottom: 35px;
-  }
-
-  .features p {
-
-    font-size: 0.78rem;
-
-    line-height: 1.5;
-  }
-
-  /* ===============================
-     BUTTON
-  ================================ */
-
-  .package-btn {
-
-    padding: 15px;
-
-    font-size: 0.62rem;
-
-    letter-spacing: 2px;
   }
 
 }
@@ -428,73 +628,32 @@
    SMALL MOBILE
 ========================================= */
 
-@media (max-width: 480px) {
+@media(max-width:480px){
 
-  .packages {
+  .packages{
 
-    padding: 65px 4%;
+    padding:70px 4%;
+
   }
 
-  .packages-header {
+  .packages-header h2{
 
-    margin-bottom: 40px;
+    font-size:1.9rem;
+
   }
 
-  .packages-header h2 {
+  .package-card{
 
-    font-size: 1.9rem;
+    min-width:92%;
+
+    padding:34px 22px;
+
   }
 
-  .package-card {
+  .price-box h1{
 
-    min-width: 92%;
+    font-size:2rem;
 
-    padding: 34px 22px;
-  }
-
-  .package-card h3 {
-
-    font-size: 1.3rem;
-  }
-
-  .price-box h1 {
-
-    font-size: 2rem;
-  }
-
-  .features p {
-
-    font-size: 0.74rem;
-  }
-
-  .package-btn {
-
-    font-size: 0.58rem;
-
-    letter-spacing: 1.5px;
-  }
-
-}
-
-/* =========================================
-   EXTRA SMALL DEVICES
-========================================= */
-
-@media (max-width: 360px) {
-
-  .packages-header h2 {
-
-    font-size: 1.7rem;
-  }
-
-  .package-card {
-
-    min-width: 95%;
-  }
-
-  .price-box h1 {
-
-    font-size: 1.8rem;
   }
 
 }

@@ -102,10 +102,10 @@ export default function Location() {
 
       >
 
-        Clicks by Korniza
+        Frame Makers Studio
         <br />
 
-        Tamil Nadu
+        Kerala
         <br />
 
         India
@@ -149,7 +149,7 @@ export default function Location() {
 
         <motion.iframe
 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.76775846282!2d79.81370947485122!3d12.793581387505641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52e9bd333d0e31%3A0xf0ae32959fa8072a!2sClicks%20by%20Korniza!5e0!3m2!1sen!2sin!4v1777840583895!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2021104.0356380036!2d74.67843815624998!3d8.355455200000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05ab2238edb9ad%3A0xb347142640c763f3!2sFrame%20makers%20Studio!5e0!3m2!1sen!2sin!4v1778850524294!5m2!1sen!2sin"
 
           width="100%"
 
@@ -165,7 +165,7 @@ export default function Location() {
 
           referrerPolicy="no-referrer-when-downgrade"
 
-          title="Clicks by Korniza Location"
+          title="Frame Makers Studio Location"
 
           initial={{
             scale:1.08
