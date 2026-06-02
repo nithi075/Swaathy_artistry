@@ -1,29 +1,22 @@
 /* =========================================
-   PREMIUM DARK OLIVE PORTFOLIO SECTION
-   MATCHING ABOUT SECTION EXACTLY
-   FRAME MAKERS STUDIO
+   LUXURY MAKEUP GALLERY SECTION
+   MATCHING ABOUT + FOOTER THEME
 ========================================= */
 
 .portfolio{
 
   position:relative;
 
-  padding:160px 0;
+  padding:140px 0;
 
   overflow:hidden;
 
-  background:
-  linear-gradient(
-    180deg,
-    #1E2414 0%,
-    #2B341D 45%,
-    #3B4626 100%
-  );
+  background:#f4f1f0;
 
 }
 
 /* =========================================
-   CHAMPAGNE GOLD AMBIENT GLOW
+   DECORATIVE SHAPES
 ========================================= */
 
 .portfolio::before{
@@ -32,22 +25,16 @@
 
   position:absolute;
 
-  width:650px;
-  height:650px;
+  width:130px;
+  height:130px;
 
-  top:-260px;
-  right:-180px;
+  border-radius:50%;
+
+  top:60px;
+  right:80px;
 
   background:
-  radial-gradient(
-    circle,
-    rgba(197,163,119,.12),
-    transparent 72%
-  );
-
-  pointer-events:none;
-
-  filter:blur(10px);
+  rgba(196,154,108,.22);
 
 }
 
@@ -57,20 +44,19 @@
 
   position:absolute;
 
-  width:420px;
-  height:420px;
+  width:90px;
+  height:90px;
 
-  bottom:-180px;
-  left:-140px;
+  border-radius:50%;
+
+  bottom:60px;
+  left:60px;
+
+  border:
+  2px solid rgba(120,70,40,.18);
 
   background:
-  radial-gradient(
-    circle,
-    rgba(197,163,119,.08),
-    transparent 70%
-  );
-
-  pointer-events:none;
+  rgba(196,154,108,.12);
 
 }
 
@@ -98,58 +84,29 @@
 
   text-align:center;
 
-  margin-bottom:100px;
+  margin-bottom:90px;
 
 }
 
 /* =========================================
-   SMALL LABEL
+   TAG
 ========================================= */
 
 .p-tag{
 
   display:inline-block;
 
-  color:#C5A377;
+  color:#e2877f;
 
-  font-size:.74rem;
+  font-size:.9rem;
 
-  font-weight:500;
+  font-weight:700;
 
-  letter-spacing:8px;
+  letter-spacing:2px;
+
+  margin-bottom:20px;
 
   text-transform:uppercase;
-
-  margin-bottom:28px;
-
-  position:relative;
-
-  animation:goldPulse 3s ease-in-out infinite;
-
-}
-
-/* gold line */
-
-.p-tag::after{
-
-  content:"";
-
-  position:absolute;
-
-  left:50%;
-  transform:translateX(-50%);
-
-  bottom:-10px;
-
-  width:70px;
-  height:1px;
-
-  background:
-  linear-gradient(
-    to right,
-    #C5A377,
-    transparent
-  );
 
 }
 
@@ -159,67 +116,22 @@
 
 .portfolio-title{
 
-  font-family:var(--heading-font);
+  font-size:
+  clamp(3rem,5vw,5.5rem);
 
-  font-size:clamp(3.2rem,5vw,6rem);
+  line-height:1;
 
-  font-weight:500;
+  color:#5a2c18;
 
-  line-height:1.05;
+  margin-bottom:28px;
 
-  color:#FFFFFF;
-
-  margin-bottom:34px;
-
-  letter-spacing:3px;
-
-  text-transform:uppercase;
-
-  position:relative;
-
-  overflow:hidden;
+  font-weight:600;
 
 }
 
 .portfolio-title span{
 
-  font-family:var(--accent-font);
-
-  color:#C5A377;
-
-  font-style:italic;
-
-  text-transform:none;
-
-  letter-spacing:1px;
-
-}
-
-/* shine effect */
-
-.portfolio-title::after{
-
-  content:"";
-
-  position:absolute;
-
-  top:0;
-  left:-120%;
-
-  width:80%;
-  height:100%;
-
-  background:
-  linear-gradient(
-    90deg,
-    transparent,
-    rgba(245,245,240,.08),
-    transparent
-  );
-
-  transform:skewX(-20deg);
-
-  animation:titleShine 5s ease infinite;
+  color:#c49a6c;
 
 }
 
@@ -229,19 +141,15 @@
 
 .p-sub{
 
-  max-width:720px;
+  max-width:760px;
 
   margin:auto;
 
-  color:rgba(245,245,240,0.68);
+  color:#6b4a3b;
 
-  font-size:.94rem;
+  font-size:1rem;
 
-  line-height:2.1;
-
-  letter-spacing:.4px;
-
-  font-weight:300;
+  line-height:2;
 
 }
 
@@ -254,6 +162,7 @@
   position:relative;
 
   width:100%;
+
   height:760px;
 
   display:flex;
@@ -261,7 +170,7 @@
   justify-content:center;
   align-items:center;
 
-  margin-bottom:100px;
+  margin-bottom:90px;
 
 }
 
@@ -274,7 +183,7 @@
   position:absolute;
 
   width:440px;
-  height:610px;
+  height:620px;
 
   cursor:pointer;
 
@@ -285,6 +194,10 @@
 
 }
 
+/* =========================================
+   IMAGE WRAP
+========================================= */
+
 .card-image-wrap{
 
   position:relative;
@@ -294,16 +207,16 @@
 
   overflow:hidden;
 
-  border-radius:8px;
+  border-radius:180px 180px 30px 30px;
 
   background:#ddd;
 
   box-shadow:
-  0 24px 60px rgba(0,0,0,.18);
+  0 20px 50px rgba(0,0,0,.12);
 
 }
 
-/* luxury border */
+/* BORDER EFFECT */
 
 .card-image-wrap::after{
 
@@ -311,16 +224,22 @@
 
   position:absolute;
 
-  inset:30px;
+  inset:24px;
 
-  border:1px solid
-  rgba(197,163,119,.22);
+  border:
+  1px solid rgba(255,255,255,.45);
+
+  border-radius:160px 160px 20px 20px;
 
   pointer-events:none;
 
   transition:.5s ease;
 
 }
+
+/* =========================================
+   IMAGE
+========================================= */
 
 .card-image-wrap img{
 
@@ -331,14 +250,7 @@
 
   transition:
   transform 2s cubic-bezier(0.16,1,0.3,1),
-  filter 1.2s ease;
-
-  filter:
-  brightness(.88)
-  contrast(1.02)
-  saturate(.92);
-
-  animation:slowFloat 8s ease-in-out infinite;
+  filter 1s ease;
 
 }
 
@@ -346,43 +258,33 @@
 
   transform:scale(1.06);
 
-  filter:
-  brightness(.94)
-  contrast(1.04);
+  filter:brightness(.96);
 
 }
 
 .portfolio-card:hover
 .card-image-wrap::after{
 
-  inset:20px;
-
-  border-color:
-  rgba(197,163,119,.42);
+  inset:18px;
 
 }
 
 /* =========================================
-   IMAGE OVERLAY
+   OVERLAY
 ========================================= */
 
 .card-overlay{
 
   position:absolute;
+
   inset:0;
 
   background:
 
   linear-gradient(
-    to right,
-    rgba(30,36,20,0.18),
-    rgba(30,36,20,0.62)
-  ),
-
-  linear-gradient(
     to top,
-    rgba(30,36,20,0.82),
-    transparent 42%
+    rgba(90,44,24,.72),
+    transparent 45%
   );
 
 }
@@ -394,9 +296,6 @@
 .portfolio-card.active{
 
   z-index:5;
-
-  box-shadow:
-  0 40px 100px rgba(0,0,0,.28);
 
 }
 
@@ -418,45 +317,42 @@
 
   display:block;
 
-  color:#C5A377;
+  color:#e2877f;
 
-  font-size:.72rem;
+  font-size:.8rem;
 
-  letter-spacing:6px;
+  letter-spacing:3px;
 
-  margin-bottom:20px;
+  margin-bottom:18px;
 
   text-transform:uppercase;
+
+  font-weight:700;
 
 }
 
 .active-details h3{
 
-  font-family:var(--heading-font);
+  font-size:
+  clamp(2.2rem,4vw,4rem);
 
-  font-size:clamp(2.4rem,4vw,4.2rem);
+  color:#5a2c18;
 
-  font-weight:500;
+  margin-bottom:22px;
 
-  color:#FFFFFF;
-
-  margin-bottom:26px;
-
-  line-height:1.08;
+  line-height:1.1;
 
 }
 
 .active-details p{
 
-  color:rgba(245,245,240,0.62);
+  color:#6b4a3b;
 
-  line-height:2.1;
+  line-height:2;
 
-  font-size:.92rem;
+  font-size:1rem;
 
-  margin-bottom:42px;
-
-  font-weight:300;
+  margin-bottom:40px;
 
 }
 
@@ -466,173 +362,34 @@
 
 .portfolio-btn{
 
-  position:relative;
-
-  display:inline-flex;
-
-  align-items:center;
-
-  gap:16px;
-
-  background:none;
+  padding:16px 34px;
 
   border:none;
 
-  color:#FFFFFF;
+  border-radius:14px;
 
-  font-size:.72rem;
+  background:#6a341f;
 
-  letter-spacing:4px;
+  color:white;
 
-  text-transform:uppercase;
+  font-size:.9rem;
 
-  padding-bottom:14px;
+  font-weight:500;
 
   cursor:pointer;
 
-  transition:all .5s ease;
+  transition:.3s ease;
 
-  overflow:hidden;
-
-}
-
-/* underline */
-
-.portfolio-btn::after{
-
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  bottom:0;
-
-  width:100%;
-  height:1px;
-
-  background:
-  rgba(245,245,240,.18);
-
-  transition:.5s ease;
-
-}
-
-/* premium hover glow */
-
-.portfolio-btn::before{
-
-  content:"";
-
-  position:absolute;
-
-  top:0;
-  left:-120%;
-
-  width:100%;
-  height:100%;
-
-  background:
-  linear-gradient(
-    120deg,
-    transparent,
-    rgba(197,163,119,.12),
-    transparent
-  );
-
-  transition:1s ease;
+  box-shadow:
+  0 10px 25px rgba(106,52,31,.20);
 
 }
 
 .portfolio-btn:hover{
 
-  color:#C5A377;
+  background:#7b4128;
 
   transform:translateY(-3px);
-
-}
-
-.portfolio-btn:hover::before{
-
-  left:120%;
-
-}
-
-.portfolio-btn:hover::after{
-
-  background:#C5A377;
-
-  box-shadow:
-  0 0 14px rgba(197,163,119,.38);
-
-}
-
-/* arrow */
-
-.portfolio-btn span{
-
-  transition:.4s ease;
-
-}
-
-.portfolio-btn:hover span{
-
-  transform:translateX(6px);
-
-}
-
-/* =========================================
-   ANIMATIONS
-========================================= */
-
-@keyframes titleShine{
-
-  0%{
-    left:-120%;
-  }
-
-  40%{
-    left:130%;
-  }
-
-  100%{
-    left:130%;
-  }
-
-}
-
-@keyframes goldPulse{
-
-  0%{
-    opacity:.7;
-    text-shadow:0 0 0 rgba(197,163,119,0);
-  }
-
-  50%{
-    opacity:1;
-    text-shadow:
-    0 0 12px rgba(197,163,119,.35);
-  }
-
-  100%{
-    opacity:.7;
-    text-shadow:0 0 0 rgba(197,163,119,0);
-  }
-
-}
-
-@keyframes slowFloat{
-
-  0%{
-    transform:scale(1) translateY(0px);
-  }
-
-  50%{
-    transform:scale(1.03) translateY(-8px);
-  }
-
-  100%{
-    transform:scale(1) translateY(0px);
-  }
 
 }
 
@@ -650,7 +407,7 @@
 
   .portfolio-slider{
 
-    height:580px;
+    height:560px;
 
   }
 
@@ -658,6 +415,18 @@
 
     width:340px;
     height:470px;
+
+  }
+
+  .card-image-wrap{
+
+    border-radius:140px 140px 24px 24px;
+
+  }
+
+  .card-image-wrap::after{
+
+    border-radius:120px 120px 18px 18px;
 
   }
 
@@ -672,6 +441,12 @@
   .portfolio{
 
     padding:90px 0;
+
+  }
+
+  .portfolio-header{
+
+    margin-bottom:60px;
 
   }
 
@@ -690,9 +465,17 @@
 
   }
 
+  .card-image-wrap{
+
+    border-radius:110px 110px 20px 20px;
+
+  }
+
   .card-image-wrap::after{
 
-    inset:18px;
+    inset:14px;
+
+    border-radius:95px 95px 16px 16px;
 
   }
 
@@ -700,17 +483,13 @@
 
     font-size:3rem;
 
-    line-height:1.08;
-
-    letter-spacing:2px;
-
   }
 
   .p-sub{
 
-    font-size:.78rem;
+    font-size:.92rem;
 
-    line-height:1.9;
+    line-height:1.8;
 
   }
 
@@ -722,15 +501,9 @@
 
   .active-details p{
 
-    font-size:.76rem;
+    font-size:.86rem;
 
-    line-height:1.85;
-
-  }
-
-  .portfolio-card img{
-
-    animation:none;
+    line-height:1.8;
 
   }
 
@@ -750,32 +523,52 @@
 
   .portfolio-title{
 
-    font-size:2.3rem;
+    font-size:2.4rem;
 
   }
 
   .portfolio-slider{
 
-    height:330px;
+    height:320px;
 
   }
 
   .portfolio-card{
 
     width:180px;
-    height:260px;
+    height:250px;
+
+  }
+
+  .card-image-wrap{
+
+    border-radius:90px 90px 18px 18px;
+
+  }
+
+  .card-image-wrap::after{
+
+    border-radius:75px 75px 14px 14px;
 
   }
 
   .active-details h3{
 
-    font-size:1.45rem;
+    font-size:1.5rem;
 
   }
 
   .active-details p{
 
-    font-size:.7rem;
+    font-size:.78rem;
+
+  }
+
+  .portfolio-btn{
+
+    padding:14px 28px;
+
+    font-size:.82rem;
 
   }
 

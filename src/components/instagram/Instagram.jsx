@@ -35,7 +35,7 @@ export default function Instagram() {
             <h3>FOLLOW OUR JOURNEY</h3>
             <p>Get inspired and follow us on Instagram</p>
            <a
-  href="https://www.instagram.com/frame_makers_studio/"
+  href="https://www.instagram.com/swaathy_artistry__/"
   target="_blank"
   rel="noopener noreferrer"
   className="insta-btn"

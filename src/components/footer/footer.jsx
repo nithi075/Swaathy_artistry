@@ -1,325 +1,41 @@
-import { FaInstagram } from "react-icons/fa";
+import "./Footer.css";
+import { FaInstagram, FaFacebookF, FaPinterestP } from "react-icons/fa";
 
-import {
-  FiSend,
-  FiPhone
-} from "react-icons/fi";
-
-import { motion } from "framer-motion";
-
-import "./footer.css";
-
-export default function Footer() {
-
-  const currentYear =
-  new Date().getFullYear();
-
+function Footer() {
   return (
-
     <footer className="footer">
+      <div className="footer-grid">
+        <div>
+          <h2>Luna Beauty</h2>
+          <p>Luxury bridal artistry for timeless beauty moments.</p>
+        </div>
 
-      <div className="footer-container">
+        <div>
+          <h3>Quick Links</h3>
 
-        {/* =====================================
-            TOP
-        ===================================== */}
-
-        <motion.div
-
-          className="footer-top"
-
-          initial={{
-            opacity:0,
-            y:50
-          }}
-
-          whileInView={{
-            opacity:1,
-            y:0
-          }}
-
-          transition={{
-            duration:1
-          }}
-
-          viewport={{
-            once:true
-          }}
-
-        >
-
-          {/* BRAND */}
-
-          <div className="footer-brand-section">
-
-            <motion.h2
-
-              className="footer-logo"
-
-              initial={{
-                opacity:0,
-                letterSpacing:"12px"
-              }}
-
-              whileInView={{
-                opacity:1,
-                letterSpacing:"4px"
-              }}
-
-              transition={{
-                duration:1.2
-              }}
-
-              viewport={{
-                once:true
-              }}
-
-            >
-
-              FRAME MAKERS STUDIO
-
-            </motion.h2>
-
-            <span className="footer-tagline">
-
-              ARTISANAL WEDDING PHOTOGRAPHY
-
-            </span>
-
+          <div className="footer-links">
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#booking">Booking</a>
           </div>
-
-          {/* CTA */}
-
-          <motion.div
-
-            className="footer-cta"
-
-            initial={{
-              opacity:0,
-              x:40
-            }}
-
-            whileInView={{
-              opacity:1,
-              x:0
-            }}
-
-            transition={{
-              duration:1,
-              delay:.2
-            }}
-
-            viewport={{
-              once:true
-            }}
-
-          >
-
-            <p>
-
-              Ready to preserve your story?
-
-            </p>
-
-            <motion.button
-
-              className="footer-main-btn"
-
-              whileHover={{
-                y:-4,
-                scale:1.03
-              }}
-
-              whileTap={{
-                scale:.96
-              }}
-
-              onClick={() =>
-                window.open(
-                  "https://wa.me/918136823986",
-                  "_blank"
-                )
-              }
-
-            >
-
-              <span>
-
-                GET IN TOUCH
-
-              </span>
-
-              <FiSend size={14} />
-
-            </motion.button>
-
-          </motion.div>
-
-        </motion.div>
-
-        {/* DIVIDER */}
-
-        <div className="footer-divider"></div>
-
-        {/* =====================================
-            MIDDLE
-        ===================================== */}
-
-        <motion.div
-
-          className="footer-middle"
-
-          initial={{
-            opacity:0,
-            y:40
-          }}
-
-          whileInView={{
-            opacity:1,
-            y:0
-          }}
-
-          transition={{
-            duration:1,
-            delay:.3
-          }}
-
-          viewport={{
-            once:true
-          }}
-
-        >
-
-          {/* NAV */}
-
-          <nav className="footer-nav">
-
-            <a href="#home">
-
-              HOME
-
-            </a>
-
-            <a href="#gallery">
-
-              PORTFOLIO
-
-            </a>
-
-            <a href="#services">
-
-              SERVICES
-
-            </a>
-
-            <a href="#testimonials">
-
-              JOURNAL
-
-            </a>
-
-          </nav>
-
-          {/* SOCIALS */}
-
-          <div className="footer-socials">
-
-            <motion.a
-
-              href="https://www.instagram.com/frame_makers_studio/"
-
-              target="_blank"
-
-              rel="noreferrer"
-
-              className="social-link"
-
-              whileHover={{
-                y:-5,
-                rotate:4
-              }}
-
-            >
-
-              <FaInstagram size={18} />
-
-            </motion.a>
-
-            <motion.a
-
-              href="https://wa.me/918136823986"
-
-              target="_blank"
-
-              rel="noreferrer"
-
-              className="social-link"
-
-              whileHover={{
-                y:-5,
-                rotate:-4
-              }}
-
-            >
-
-              <FiPhone size={18} />
-
-            </motion.a>
-
+        </div>
+
+        <div>
+          <h3>Follow Us</h3>
+
+          <div className="social-icons">
+            <FaInstagram />
+            <FaFacebookF />
+            <FaPinterestP />
           </div>
-
-        </motion.div>
-
-        {/* =====================================
-            BOTTOM
-        ===================================== */}
-
-        <motion.div
-
-          className="footer-bottom"
-
-          initial={{
-            opacity:0
-          }}
-
-          whileInView={{
-            opacity:1
-          }}
-
-          transition={{
-            duration:1,
-            delay:.5
-          }}
-
-          viewport={{
-            once:true
-          }}
-
-        >
-
-          <p className="copyright">
-
-            © {currentYear}
-            {" "}
-            FRAME MAKER STUDIO.
-            ALL RIGHTS RESERVED.
-
-          </p>
-
-          <div className="footer-legal">
-
-            <span>
-
-              CRAFTED WITH PASSION
-
-            </span>
-
-          </div>
-
-        </motion.div>
-
+        </div>
       </div>
 
+      <p className="copyright">
+        © 2026 Luna Beauty. All Rights Reserved.
+      </p>
     </footer>
   );
 }
+
+export default Footer;

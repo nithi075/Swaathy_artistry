@@ -1,6 +1,6 @@
 import "./featured.css";
 
-// your gallery images
+// makeup gallery images
 import img1 from "../../assets/featured/img1.jpg";
 import img2 from "../../assets/featured/img2.jpg";
 import img3 from "../../assets/featured/img3.jpg";
@@ -10,8 +10,7 @@ import img6 from "../../assets/featured/img6.jpg";
 import img7 from "../../assets/featured/img7.jpg";
 import img8 from "../../assets/featured/img8.jpg";
 
-// your video
-import weddingVideo from "../../assets/featured/wedding-video.mp4";
+// makeup reel / promo video
 
 export default function Featured() {
 
@@ -28,61 +27,74 @@ export default function Featured() {
 
   const handleInstagramRedirect = () => {
     window.open(
-      "https://www.instagram.com/frame_makers_studio/",
+      "https://www.instagram.com/swaathy_artistry__/",
       "_blank"
     );
   };
 
   return (
+
     <section className="featured">
 
       <span className="tag">
-        OUR FAVORITE MOMENTS
+        OUR SIGNATURE LOOKS
       </span>
 
       <h2>
-        FEATURED WEDDING
+        FEATURED BRIDAL
       </h2>
 
-      {/* video section */}
-      <div className="featured-video-container">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="featured-video"
-        >
-          <source src={weddingVideo} type="video/mp4" />
-        </video>
-      </div>
+      {/* VIDEO SECTION */}
 
-      {/* collage */}
+    
+
+      {/* COLLAGE */}
+
       <div className="featuredGrid">
 
         {galleryImages.slice(0,3).map((img,index)=>(
-          <img key={index} src={img} alt="" />
+
+          <img
+            key={index}
+            src={img}
+            alt=""
+          />
+
         ))}
 
         <div className="quote-box">
-          MEMORIES
+
+          BEAUTY
           <br/>
-          THAT LAST
+
+          THAT GLOWS
           <br/>
+
           FOREVER
+
         </div>
 
         {galleryImages.slice(3).map((img,index)=>(
-          <img key={index} src={img} alt="" />
+
+          <img
+            key={index}
+            src={img}
+            alt=""
+          />
+
         ))}
 
       </div>
+
+      {/* BUTTON */}
 
       <button 
         className="featured-btn"
         onClick={handleInstagramRedirect}
       >
-        View More ↗
+
+        View More Looks ↗
+
       </button>
 
     </section>

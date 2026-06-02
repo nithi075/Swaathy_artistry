@@ -1,749 +1,232 @@
-/* =========================================
-   PREMIUM EARTHY LUXURY ABOUT SECTION
-========================================= */
-
-.about{
-
-  position:relative;
-
-  width:100%;
-
-  background:
-  linear-gradient(
-    180deg,
-    #1E2414 0%,
-    #2B341D 45%,
-    #3B4626 100%
-  );
-
-  padding:160px 0;
-
-  overflow:hidden;
-
-  display:grid;
-
-  grid-template-columns:
-  1fr 1fr;
-
-  align-items:center;
-
-  gap:100px;
-
-}
-
-/* =========================================
-   CHAMPAGNE GOLD AMBIENT GLOW
-========================================= */
-
-.about::before{
-
-  content:"";
-
-  position:absolute;
-
-  width:650px;
-  height:650px;
-
-  top:-260px;
-  right:-180px;
-
-  background:
-  radial-gradient(
-    circle,
-    rgba(197,163,119,.12),
-    transparent 72%
-  );
-
-  pointer-events:none;
-
-  filter:blur(10px);
-
-}
-
-.about::after{
-
-  content:"";
-
-  position:absolute;
-
-  width:420px;
-  height:420px;
-
-  bottom:-180px;
-  left:-140px;
-
-  background:
-  radial-gradient(
-    circle,
-    rgba(197,163,119,.08),
-    transparent 70%
-  );
-
-  pointer-events:none;
-
-}
-
-/* =========================================
-   LEFT IMAGE
-========================================= */
-
-.about-left{
-
-  position:relative;
-
-  width:100%;
-  height:920px;
-
-  overflow:hidden;
-
-}
-
-.about-left img{
-
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  transition:
-  transform 2s cubic-bezier(0.16,1,0.3,1),
-  filter 1.2s ease;
-
-  filter:
-  brightness(.88)
-  contrast(1.02)
-  saturate(.92);
-
-}
-
-.about-left:hover img{
-
-  transform:scale(1.06);
-
-  filter:
-  brightness(.94)
-  contrast(1.04);
-
-}
-
-/* =========================================
-   IMAGE OVERLAY
-========================================= */
-
-.fade-overlay{
-
-  position:absolute;
-  inset:0;
-
-  background:
-
-  linear-gradient(
-    to right,
-    rgba(30,36,20,0.18),
-    rgba(30,36,20,0.62)
-  ),
-
-  linear-gradient(
-    to top,
-    rgba(30,36,20,0.82),
-    transparent 42%
-  );
-
-}
-
-/* luxury border */
-
-.about-left::after{
-
-  content:"";
-
-  position:absolute;
-
-  inset:30px;
-
-  border:1px solid
-  rgba(197,163,119,.22);
-
-  pointer-events:none;
-
-}
-
-/* =========================================
-   RIGHT CONTENT
-========================================= */
-
-.about-right{
-
-  width:min(88%,640px);
-
-  position:relative;
-
-  z-index:2;
-
-}
-
-/* =========================================
-   SMALL LABEL
-========================================= */
-
-.about-small{
-
-  display:inline-block;
-
-  color:#C5A377;
-
-  font-size:.74rem;
-
-  font-weight:500;
-
-  letter-spacing:8px;
-
-  text-transform:uppercase;
-
-  margin-bottom:28px;
-
-  position:relative;
-
-}
-
-/* gold line */
-
-.about-small::after{
-
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  bottom:-10px;
-
-  width:70px;
-  height:1px;
-
-  background:
-  linear-gradient(
-    to right,
-    #C5A377,
-    transparent
-  );
-
-}
-
-/* =========================================
-   TITLE
-========================================= */
-
-.about-title{
-
-  font-family:var(--heading-font);
-
-  font-size:clamp(3.2rem,5vw,6rem);
-
-  font-weight:500;
-
-  line-height:1.05;
-
-  color:#FFFFFF;
-
-  margin-bottom:34px;
-
-  letter-spacing:3px;
-
-  text-transform:uppercase;
-
-}
-
-.about-title span{
-
-  font-family:var(--accent-font);
-
-  color:#C5A377;
-
-  font-style:italic;
-
-  text-transform:none;
-
-  letter-spacing:1px;
-
-}
-
-/* =========================================
-   SUBTEXT
-========================================= */
-
-.about-sub{
-
-  color:rgba(245,245,240,0.82);
-
-  font-size:1rem;
-
-  line-height:2;
-
-  margin-bottom:34px;
-
-  font-weight:300;
-
-  max-width:560px;
-
-}
-
-/* =========================================
-   MAIN TEXT
-========================================= */
-
-.about-text{
-
-  color:rgba(245,245,240,0.62);
-
-  font-size:.95rem;
-
-  line-height:2.15;
-
-  font-weight:300;
-
-  margin-bottom:56px;
-
-  max-width:560px;
-
-}
-
-/* =========================================
-   BUTTON
-========================================= */
-
-.about-btn{
-
-  position:relative;
-
-  display:inline-flex;
-
-  align-items:center;
-
-  gap:16px;
-
-  background:none;
-
-  border:none;
-
-  color:#FFFFFF;
-
-  font-size:.72rem;
-
-  letter-spacing:4px;
-
-  text-transform:uppercase;
-
-  padding-bottom:14px;
-
-  cursor:pointer;
-
-  transition:all .5s ease;
-
-}
-
-/* underline */
-
-.about-btn::after{
-
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  bottom:0;
-
-  width:100%;
-  height:1px;
-
-  background:
-  rgba(245,245,240,.18);
-
-  transition:.5s ease;
-
-}
-
-.about-btn:hover{
-
-  color:#C5A377;
-
-  transform:translateY(-3px);
-
-}
-
-.about-btn:hover::after{
-
-  background:#C5A377;
-
-  box-shadow:
-  0 0 14px rgba(197,163,119,.38);
-
-}
-
-/* arrow */
-
-.about-btn span{
-
-  transition:.4s ease;
-
-}
-
-.about-btn:hover span{
-
-  transform:translateX(6px);
-
-}
-
-/* =========================================
-   LARGE LAPTOP
-========================================= */
-
-@media(max-width:1400px){
-
-  .about{
-
-    gap:70px;
-
-    padding:130px 0;
-
-  }
-
-  .about-left{
-
-    height:760px;
-
-  }
-
-}
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media(max-width:991px){
-
-  .about{
-
-    grid-template-columns:1fr;
-
-    gap:70px;
-
-    padding:110px 0;
-
-  }
-
-  .about-left{
-
-    height:620px;
-
-  }
-
-  .about-right{
-
-    width:min(90%,720px);
-
-    margin:auto;
-
-  }
-
-}
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media(max-width:768px){
-
-  .about{
-
-    padding:90px 0;
-
-    gap:45px;
-
-  }
-
-  .about-left{
-
-    height:430px;
-
-  }
-
-  .about-left::after{
-
-    inset:18px;
-
-  }
-
-  .about-right{
-
-    width:90%;
-
-  }
-
-  .about-title{
-
-    font-size:3rem;
-
-    line-height:1.08;
-
-    letter-spacing:2px;
-
-  }
-
-  .about-sub{
-
-    font-size:.92rem;
-
-    line-height:1.9;
-
-  }
-
-  .about-text{
-
-    font-size:.84rem;
-
-    line-height:1.95;
-
-  }
-
-  .about-small{
-
-    letter-spacing:5px;
-
-  }
-
-}
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media(max-width:480px){
-
-  .about{
-
-    padding:70px 0;
-
-  }
-
-  .about-title{
-
-    font-size:2.35rem;
-
-  }
-
-  .about-left{
-
-    height:320px;
-
-  }
-
-  .about-btn{
-
-    letter-spacing:3px;
-
-    font-size:.66rem;
-
-  }
-
-}
-
-/* =========================================
-   CINEMATIC TEXT REVEAL
-========================================= */
-
-.about-right > *{
-
-  will-change: transform, opacity;
-
-}
-
-/* =========================================
-   TITLE GLOW EFFECT
-========================================= */
-
-.about-title{
-
-  position: relative;
+.about-section {
+  min-height: 100vh;
+  background: #f4f1f0;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 80px;
+
+  padding: 100px 8%;
 
   overflow: hidden;
-
 }
 
-.about-title::after{
+/* IMAGE SIDE */
 
-  content:"";
-
-  position:absolute;
-
-  top:0;
-  left:-120%;
-
-  width:80%;
-  height:100%;
-
-  background:
-  linear-gradient(
-    90deg,
-    transparent,
-    rgba(245,245,240,.08),
-    transparent
-  );
-
-  transform:skewX(-20deg);
-
-  animation:titleShine 5s ease infinite;
-
+.about-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes titleShine{
+.about-image {
+  width: 100%;
+  max-width: 450px;
+  height: 620px;
 
-  0%{
-    left:-120%;
+  border-radius: 180px 180px 30px 30px;
+  overflow: hidden;
+
+  position: relative;
+  z-index: 2;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* DECORATIVE SHAPES */
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(196, 154, 108, 0.5);
+}
+
+.shape-top {
+  width: 90px;
+  height: 90px;
+
+  top: 40px;
+  right: 40px;
+}
+
+.shape-bottom {
+  width: 80px;
+  height: 80px;
+
+  bottom: 20px;
+  left: 40px;
+
+  border: 2px solid rgba(120, 70, 40, 0.4);
+  background: rgba(196, 154, 108, 0.3);
+}
+
+/* CONTENT */
+
+.about-content {
+  max-width: 650px;
+}
+
+.about-tag {
+  display: inline-block;
+
+  color: #e2877f;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  margin-bottom: 20px;
+}
+
+.about-content h2 {
+  font-size: 4.5rem;
+  line-height: 1;
+  color: #5a2c18;
+
+  margin-bottom: 30px;
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: #6b4a3b;
+
+  margin-bottom: 22px;
+}
+
+/* BUTTONS */
+
+.about-buttons {
+  margin-top: 40px;
+
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.read-more-btn {
+  padding: 16px 34px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: #6a341f;
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 25px rgba(106, 52, 31, 0.25);
+
+  transition: 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background: #7b4128;
+}
+
+.call-btn {
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+
+  background: #6a341f;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.1rem;
+
+  box-shadow: 0 10px 25px rgba(106, 52, 31, 0.25);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .about-section {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
-  40%{
-    left:130%;
+  .about-content {
+    margin: auto;
   }
 
-  100%{
-    left:130%;
+  .about-buttons {
+    justify-content: center;
   }
 
-}
-
-/* =========================================
-   GOLD PULSE
-========================================= */
-
-.about-small{
-
-  animation:goldPulse 3s ease-in-out infinite;
-
-}
-
-@keyframes goldPulse{
-
-  0%{
-    opacity:.7;
-    text-shadow:0 0 0 rgba(197,163,119,0);
+  .shape-top {
+    right: 80px;
   }
 
-  50%{
-    opacity:1;
-    text-shadow:
-    0 0 12px rgba(197,163,119,.35);
+  .shape-bottom {
+    left: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 80px 5%;
+    gap: 60px;
   }
 
-  100%{
-    opacity:.7;
-    text-shadow:0 0 0 rgba(197,163,119,0);
+  .about-image {
+    height: 500px;
+    border-radius: 140px 140px 25px 25px;
   }
 
-}
-
-/* =========================================
-   PARAGRAPH APPEAR
-========================================= */
-
-.about-sub,
-.about-text{
-
-  transform:translateY(10px);
-
-}
-
-/* =========================================
-   BUTTON PREMIUM HOVER
-========================================= */
-
-.about-btn{
-
-  overflow:hidden;
-
-}
-
-.about-btn::before{
-
-  content:"";
-
-  position:absolute;
-
-  top:0;
-  left:-120%;
-
-  width:100%;
-  height:100%;
-
-  background:
-  linear-gradient(
-    120deg,
-    transparent,
-    rgba(197,163,119,.12),
-    transparent
-  );
-
-  transition:1s ease;
-
-}
-
-.about-btn:hover::before{
-
-  left:120%;
-
-}
-
-/* =========================================
-   IMAGE FLOAT
-========================================= */
-
-.about-left img{
-
-  animation:slowFloat 8s ease-in-out infinite;
-
-}
-
-@keyframes slowFloat{
-
-  0%{
-    transform:scale(1) translateY(0px);
+  .about-content h2 {
+    font-size: 3rem;
   }
 
-  50%{
-    transform:scale(1.03) translateY(-8px);
+  .about-content p {
+    font-size: 0.98rem;
+    line-height: 1.9;
   }
 
-  100%{
-    transform:scale(1) translateY(0px);
+  .shape-top {
+    width: 70px;
+    height: 70px;
   }
 
+  .shape-bottom {
+    width: 65px;
+    height: 65px;
+  }
 }
 
-/* =========================================
-   PREMIUM OVERLAY
-========================================= */
-
-.fade-overlay{
-
-  backdrop-filter: blur(.5px);
-
-}
-
-/* =========================================
-   MOBILE OPTIMIZATION
-========================================= */
-
-@media(max-width:768px){
-
-  .about-title::after{
-
-    animation-duration:6s;
-
+@media (max-width: 500px) {
+  .about-image {
+    height: 420px;
   }
 
-  .about-left img{
-
-    animation:none;
-
+  .about-content h2 {
+    font-size: 2.5rem;
   }
 
+  .about-buttons {
+    flex-direction: row;
+    gap: 18px;
+  }
+
+  .read-more-btn {
+    padding: 14px 28px;
+  }
+
+  .call-btn {
+    width: 52px;
+    height: 52px;
+  }
 }

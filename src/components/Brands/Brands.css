@@ -1,0 +1,30 @@
+.brands {
+  overflow: hidden;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  gap: 80px;
+  animation: marquee 15s linear infinite;
+}
+
+.track span {
+  font-size: 2rem;
+  color: #c49a6c;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

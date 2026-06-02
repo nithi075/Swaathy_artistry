@@ -56,10 +56,10 @@ function App() {
       <section id="instagram">
         <Instagram />
       </section>
-      <section id="location">
+      {/* <section id="location">
         <Location/>
-      </section>
-   
+      </section> */}
+    
 
       {/* Contact Section */}
       <section id="contact">

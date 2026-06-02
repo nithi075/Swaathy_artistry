@@ -1,186 +1,75 @@
 import "./About.css";
-import coupleImg from "../../assets/about1.jpg";
-
 import { motion } from "framer-motion";
 
-export default function About() {
+// Import your own image
+import aboutImage from "../../assets/about1.jpg";
+
+function About() {
   return (
-    <section className="about">
-
-      {/* LEFT IMAGE */}
+    <section className="about-section" id="about">
+      {/* IMAGE SIDE */}
       <motion.div
-        className="about-left"
-
-        initial={{
-          opacity: 0,
-          x: -80,
-          scale: 0.95
-        }}
-
-        whileInView={{
-          opacity: 1,
-          x: 0,
-          scale: 1
-        }}
-
-        transition={{
-          duration: 1.2,
-          ease: [0.16, 1, 0.3, 1]
-        }}
-
-        viewport={{ once: true }}
+        className="about-image-wrapper"
+        initial={{ opacity: 0, x: -80 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
       >
-        <img src={coupleImg} alt="The Wedding Story" />
-        <div className="fade-overlay"></div>
+        {/* DECORATIVE SHAPES */}
+        <div className="shape shape-top"></div>
+        <div className="shape shape-bottom"></div>
+
+        <div className="about-image">
+          <img
+            src={aboutImage}
+            alt="Swaathy Artistry"
+          />
+        </div>
       </motion.div>
 
-      {/* RIGHT CONTENT */}
+      {/* CONTENT SIDE */}
       <motion.div
-        className="about-right"
-
-        initial={{
-          opacity: 0,
-          y: 60
-        }}
-
-        whileInView={{
-          opacity: 1,
-          y: 0
-        }}
-
-        transition={{
-          duration: 1.2,
-          delay: 0.2,
-          ease: [0.16, 1, 0.3, 1]
-        }}
-
-        viewport={{ once: true }}
+        className="about-content"
+        initial={{ opacity: 0, x: 80 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
       >
-
-        <motion.span
-          className="about-small"
-
-          initial={{
-            opacity: 0,
-            letterSpacing: "20px"
-          }}
-
-          whileInView={{
-            opacity: 1,
-            letterSpacing: "8px"
-          }}
-
-          transition={{
-            duration: 1
-          }}
-
-          viewport={{ once: true }}
-        >
+        <span className="about-tag">
           MEET THE ARTIST
-        </motion.span>
+        </span>
 
-        <motion.h2
-          className="about-title"
+        <h2>Swaathy Artistry</h2>
 
-          initial={{
-            opacity: 0,
-            y: 40
-          }}
+        <p>
+          I believe that every face tells a unique story,
+          and my goal is to enhance your natural beauty
+          rather than mask it. With specialized experience
+          across bridal, editorial, and luxury beauty
+          styling, I bring a refined, customized approach
+          to every client.
+        </p>
 
-          whileInView={{
-            opacity: 1,
-            y: 0
-          }}
+        <p>
+          Whether it's your wedding day, engagement
+          session, or intimate celebration, I ensure you
+          step out feeling radiant, confident, and
+          absolutely flawless.
+        </p>
 
-          transition={{
-            duration: 1,
-            delay: 0.3
-          }}
-
-          viewport={{ once: true }}
-        >
-          Telling Your <span>Legacy</span>
-        </motion.h2>
-
-        <motion.p
-          className="about-sub"
-
-          initial={{
-            opacity: 0,
-            y: 30
-          }}
-
-          whileInView={{
-            opacity: 1,
-            y: 0
-          }}
-
-          transition={{
-            duration: 1,
-            delay: 0.5
-          }}
-
-          viewport={{ once: true }}
-        >
-          Fine art photography for the modern, soulful couple.
-        </motion.p>
-
-        <motion.p
-          className="about-text"
-
-          initial={{
-            opacity: 0,
-            y: 30
-          }}
-
-          whileInView={{
-            opacity: 1,
-            y: 0
-          }}
-
-          transition={{
-            duration: 1,
-            delay: 0.7
-          }}
-
-          viewport={{ once: true }}
-        >
-          We believe that photography is more than just taking pictures; it is about
-          preserving the raw emotions, the quiet glances, and the grand celebrations
-          that define your life’s greatest milestones. With a keen eye for detail
-          and a passion for storytelling, we transform your fleeting moments into
-          timeless heirlooms that you will cherish for generations.
-        </motion.p>
-
-        <motion.button
-          className="about-btn"
-
-          initial={{
-            opacity: 0,
-            y: 20
-          }}
-
-          whileInView={{
-            opacity: 1,
-            y: 0
-          }}
-
-          transition={{
-            duration: 1,
-            delay: 0.9
-          }}
-
-          viewport={{ once: true }}
-
-          whileHover={{
-            y: -4
-          }}
-        >
-          VIEW PORTFOLIO
-        </motion.button>
-
+        {/* BUTTON */}
+        <div className="about-buttons">
+          <motion.button
+            whileHover={{
+              y: -4,
+              scale: 1.03,
+            }}
+            className="read-more-btn"
+          >
+            Read More
+          </motion.button>
+        </div>
       </motion.div>
-
     </section>
   );
 }
+
+export default About;

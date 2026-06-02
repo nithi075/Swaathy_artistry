@@ -1,119 +1,158 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import "./Testimonials.css";
-import client1 from "../../assets/test1.jpg"; 
-import client2 from "../../assets/test2.jpg";
-import client3 from "../../assets/test3.jpg";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaStar,
+} from "react-icons/fa";
 
-export default function Testimonials() {
-  const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
+// Import your own client images
+import bride1 from "../../assets/featured/img1.jpg";
+import bride2 from "../../assets/featured/img5.jpg";
+import bride3 from "../../assets/featured/img3.jpg";
+import bride4 from "../../assets/featured/img4.jpg";
 
-  const reviews = [
-    {
-      img: client1,
-      title: "MODERN WAREHOUSE WEDDING",
-      author: "BY ANANTHU TABLA & ARYA AJAY",
-      text: "Our wedding memories were captured so beautifully. Every image feels timeless and emotional."
-    },
-    {
-      img: client2,
-      title: "VINTAGE GARDEN CEREMONY",
-      author: "BY ROHIT & MANASVI",
-      text: "Truly a wonderful experience. The team was so comfortable to work with and the results are art."
-    },
-    {
-      img: client3,
-      title: "CLASSIC ROYAL RECEPTION",
-      author: "BY PRANAV & ANAGHA",
-      text: "The aesthetic sense and the way they play with natural light is just incredible. Highly recommended."
-    }
-  ];
+const reviews = [
+  {
+    name: "Priya",
+    image: bride1,
+    text: "My bridal makeup was absolutely flawless. Thank you for making my special day unforgettable.",
+  },
 
-  // Auto-slide every 4 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      nextStep();
-    }, 4000);
-    return () => clearInterval(timer);
-  }, [index]);
+  {
+    name: "Nivetha",
+    image: bride2,
+    text: "Very professional service and beautiful makeup. I received so many compliments throughout the event.",
+  },
 
-  const nextStep = () => {
-    setDirection(1);
-    setIndex((prev) => (prev + 1 === reviews.length ? 0 : prev + 1));
+  {
+    name: "Keerthana",
+    image: bride3,
+    text: "The makeup stayed perfect from morning till night. I felt confident and beautiful on my wedding day.",
+  },
+
+  {
+    name: "Harini",
+    image: bride4,
+    text: "Amazing experience from trial makeup to the final bridal look. Every detail was handled with care.",
+  },
+];
+
+function Testimonials() {
+  const [current, setCurrent] = useState(0);
+
+  const prevSlide = () => {
+    setCurrent((prev) =>
+      prev === 0 ? reviews.length - 1 : prev - 1
+    );
   };
 
-  // Animation variants for smooth sliding
-  const variants = {
-    enter: (direction) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-      scale: 0.9,
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-      scale: 1,
-    },
-    exit: (direction) => ({
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-      scale: 0.9,
-    }),
+  const nextSlide = () => {
+    setCurrent((prev) =>
+      prev === reviews.length - 1 ? 0 : prev + 1
+    );
   };
 
   return (
-    <section className="testimonials" id="testimonials">
-      <motion.div 
-        className="testimonials-header"
-        initial={{ opacity: 0, y: 30 }}
+    <section
+      className="testimonials-section"
+      id="testimonials"
+    >
+      <motion.h2
+        className="testimonial-heading"
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
       >
-        <p>TESTIMONIALS</p>
-        <h2>Client <span>Stories</span></h2>
-      </motion.div>
+        Hear From Our Clients
+      </motion.h2>
 
-      <div className="slider-container">
-        <div className="slider-content">
-          <AnimatePresence initial={false} custom={direction} mode="wait">
-            <motion.div
-              key={index}
-              custom={direction}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.6 },
-              }}
-              className="journal-card featured-slide"
-            >
-              <div className="journal-img-box">
-                <img src={reviews[index].img} alt={reviews[index].title} />
-                <div className="floating-title-box">
-                  <h3 className="card-title">{reviews[index].title}</h3>
-                  <span className="card-author">{reviews[index].author}</span>
-                </div>
-              </div>
-              <div className="card-body">
-                <p className="card-text">"{reviews[index].text}"</p>
-                <div className="card-footer">
-                  <div className="dots">
-                    {reviews.map((_, i) => (
-                      <span key={i} className={`dot ${i === index ? "active" : ""}`} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+      <div className="testimonial-wrapper">
+        {/* Left Arrow */}
+        <button
+          className="arrow left-arrow"
+          onClick={prevSlide}
+        >
+          <FaChevronLeft />
+        </button>
+
+        {/* Testimonial Card */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            className="testimonial-card"
+            initial={{
+              opacity: 0,
+              scale: 0.9,
+              y: 40,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.9,
+            }}
+            transition={{
+              duration: 0.5,
+            }}
+          >
+            {/* Client Image */}
+            <div className="client-image">
+              <img
+                src={reviews[current].image}
+                alt={reviews[current].name}
+              />
+            </div>
+
+            {/* Client Name */}
+            <h3>{reviews[current].name}</h3>
+
+            {/* Stars */}
+            <div className="stars">
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+            </div>
+
+            {/* Quote Symbol */}
+            <div className="quote">“</div>
+
+            {/* Review Text */}
+            <p>{reviews[current].text}</p>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Right Arrow */}
+        <button
+          className="arrow right-arrow"
+          onClick={nextSlide}
+        >
+          <FaChevronRight />
+        </button>
+      </div>
+
+      {/* Dots Navigation */}
+      <div className="dots">
+        {reviews.map((_, index) => (
+          <span
+            key={index}
+            className={
+              current === index
+                ? "dot active-dot"
+                : "dot"
+            }
+            onClick={() => setCurrent(index)}
+          />
+        ))}
       </div>
     </section>
   );
 }
+
+export default Testimonials;

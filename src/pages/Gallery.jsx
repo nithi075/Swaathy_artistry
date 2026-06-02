@@ -7,12 +7,12 @@ import {
 
 import "./Gallery.css";
 
-import wedding from "../assets/img2.jpg";
-import wedding2 from "../assets/img6.jpg";
-import couple from "../assets/img3.jpg";
-import portrait from "../assets/img4.jpg";
-import candid from "../assets/img5.jpg";
-import wedding3 from "../assets/img7.jpg";
+import bridal1 from "../assets/img1.jpg";
+import bridal2 from "../assets/img2.jpg";
+import glam from "../assets/img3.jpg";
+import editorial from "../assets/img6.jpg";
+import reception from "../assets/img4.jpg";
+import engagement from "../assets/img2.jpg";
 
 export default function Gallery(){
 
@@ -20,45 +20,39 @@ export default function Gallery(){
      DATA
   ========================================= */
 
-  const items = [
+ const items = [
+  {
+    title: "Luxury Bridal Hairstyle",
+    category: "Brides Hairstyle",
+    img: bridal1,
+  },
 
-    {
-      title:"Maternity Magic",
-      category:"Celebrations",
-      img:wedding2
-    },
+  {
+    title: "Elegant Bridal Updo",
+    category: "Brides Hairstyle",
+    img: bridal2,
+  },
 
-    {
-      title:"Wedding Moments",
-      category:"Luxury Weddings",
-      img:wedding
-    },
+{
+  title: "Engagement Radiance",
+  category: "Engagement Makeup",
+  img: glam,
+},
 
-    {
-      title:"Couple Moments",
-      category:"Love Stories",
-      img:couple
-    },
+  {
+    title: "Soft Glam Bridesmaid",
+    category: "Bridesmaid Makeup",
+    img: editorial,
+  },
 
-    {
-      title:"Portrait Studio",
-      category:"Portraits",
-      img:portrait
-    },
+  {
+    title: "Signature Eye Artistry",
+    category: "Eye Makeup",
+    img: reception,
+  },
 
-    {
-      title:"Bride Photography",
-      category:"Moments",
-      img:candid
-    },
-    {
-      title:"Engagement Bliss",
-      category:"Love Stories",
-      img:wedding3
-    }
-
-  ];
-
+ 
+];
   /* =========================================
      ACTIVE CARD
   ========================================= */
@@ -155,18 +149,18 @@ export default function Gallery(){
 
           <span className="p-tag">
 
-            PORTFOLIO
+            MAKEUP PORTFOLIO
 
           </span>
 
           <h2 className="portfolio-title">
 
-            Timeless Frames &
+            Beauty Beyond
             <br/>
 
             <span>
 
-              Editorial Stories
+              Every Bridal Dream
 
             </span>
 
@@ -174,10 +168,10 @@ export default function Gallery(){
 
           <p className="p-sub">
 
-            Explore our curated collection
-            of cinematic wedding storytelling,
-            luxury celebrations,
-            and emotional moments.
+            Explore our signature bridal transformations,
+            glamorous party looks,
+            elegant styling,
+            and timeless beauty artistry.
 
           </p>
 
@@ -348,15 +342,15 @@ export default function Gallery(){
 
             <p>
 
-              A celebration of emotions,
-              timeless storytelling,
-              and artistic luxury photography.
+              Enhancing natural beauty with flawless artistry,
+              luxurious bridal styling,
+              and elegant makeup crafted for every special moment.
 
             </p>
 
             <button className="portfolio-btn">
 
-              VIEW FULL GALLERY
+              VIEW FULL PORTFOLIO
 
             </button>
 

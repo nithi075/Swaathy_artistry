@@ -1,676 +1,101 @@
 /* =========================================
-   PREMIUM OLIVE EDITORIAL NAVBAR
+   REFINED PREMIUM BRIDAL NAVBAR
 ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;500&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap');
 
-:root{
-
-  --gold:#C5A377;
-
-  --gold-light:#D7B58A;
-
-  --olive:#3B4626;
-
-  --olive-dark:#2B341D;
-
-  --cream:#EEF0E8;
-
-  --off-white:#F5F5F0;
-
-  --white:#FFFFFF;
-
-  --black:#1E2414;
-
-  --text-dark:#2D2D2D;
-
-  --transition:
-  all .6s cubic-bezier(.19,1,.22,1);
-
+:root {
+  --gold: #C49A6C;
+  --gold-light: #D9B58A;
+  --brown: #4B2A1A;
+  --transition: all 0.6s cubic-bezier(.19, 1, .22, 1);
 }
 
-/* =========================================
-   NAVBAR
-========================================= */
-
-.navbar{
-
-  position:fixed;
-
-  top:0;
-  left:0;
-
-  width:100%;
-
-  z-index:9999;
-
-  padding:30px 0;
-
-  transition:var(--transition);
-
+/* NAVBAR BASE */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 26px 0;
+  transition: var(--transition);
 }
 
-/* =========================================
-   SCROLL EFFECT
-========================================= */
-
-.navbar-scroll{
-
-  padding:16px 0;
-
-  background:
-  rgba(245,245,240,.82);
-
-  backdrop-filter:blur(20px);
-
-  -webkit-backdrop-filter:blur(20px);
-
-  border-bottom:
-  1px solid rgba(59,70,38,.08);
-
-  box-shadow:
-  0 10px 40px rgba(0,0,0,.04);
-
+.navbar-scroll {
+  padding: 14px 0;
+  background: rgba(255, 252, 250, 0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(75, 42, 26, 0.08);
 }
 
-/* =========================================
-   CONTAINER
-========================================= */
-
-.navbar-container{
-
-  width:min(92%,1400px);
-
-  margin:auto;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
+.navbar-container {
+  width: min(92%, 1400px);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* =========================================
-   LOGO
-========================================= */
-
-.logo-wrapper{
-
-  display:flex;
-
-  align-items:center;
-
-  z-index:10000;
-
+/* LOGO - OPTIMIZED FOR MOBILE */
+.brand-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 5vw, 2.3rem); /* Fluid typography */
+  font-weight: 600;
+  color: var(--brown);
+  line-height: 1;
+  transition: var(--transition);
 }
 
-.logo-img{
-
-  height:50px;
-
-  width:auto;
-
-  object-fit:contain;
-
-  transition:var(--transition);
-
-  filter:
-  drop-shadow(0 2px 8px rgba(0,0,0,.04));
-
+.brand-subtitle {
+  font-size: clamp(0.4rem, 2vw, 0.52rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 4px;
 }
 
-.navbar-scroll .logo-img{
-
-  height:42px;
-
+/* MOBILE PANEL - IMPROVED SPACING */
+.mobile-menu-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(100%, 400px);
+  height: 100vh;
+  background: linear-gradient(180deg, #4B2A1A 0%, #2C1A0E 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 80px 30px;
+  box-shadow: -20px 0 60px rgba(44, 26, 14, 0.2);
+  transform: translateX(100%); /* Use this for your JS toggle */
+  transition: transform 0.5s ease;
 }
 
-/* =========================================
-   DESKTOP MENU
-========================================= */
-
-.desktop-menu{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:38px;
-
+.mobile-menu-container.active {
+  transform: translateX(0);
 }
 
-.nav-link{
-
-  position:relative;
-
-  color:
-  rgba(59,70,38,.76);
-
-  font-size:.66rem;
-
-  font-family:'Montserrat',sans-serif;
-
-  letter-spacing:2.5px;
-
-  font-weight:500;
-
-  text-transform:uppercase;
-
-  transition:var(--transition);
-
-  padding-bottom:4px;
-
+/* MOBILE LINKS */
+.mobile-item-wrapper a {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.nav-link:hover{
-
-  color:var(--gold);
-
+.mobile-text {
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
-/* elegant underline */
-
-.nav-link::after{
-
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  bottom:-4px;
-
-  width:0;
-
-  height:1px;
-
-  background:
-  linear-gradient(
-    to right,
-    var(--gold),
-    transparent
-  );
-
-  transition:.45s ease;
-
+/* RESPONSIVE TWEAKS */
+@media(max-width: 991px) {
+  .desktop-menu { display: none; }
 }
 
-.nav-link:hover::after{
-
-  width:100%;
-
-}
-
-/* =========================================
-   MENU BUTTON
-========================================= */
-
-.menu-btn{
-
-  width:30px;
-
-  height:20px;
-
-  display:flex;
-
-  flex-direction:column;
-
-  justify-content:space-between;
-
-  cursor:pointer;
-
-  z-index:10001;
-
-}
-
-.btn-line{
-
-  width:100%;
-
-  height:1.5px;
-
-  background:var(--olive);
-
-  transition:var(--transition);
-
-  border-radius:10px;
-
-}
-
-.menu-btn.active .btn-line:nth-child(1){
-
-  transform:
-  translateY(9px)
-  rotate(45deg);
-
-}
-
-.menu-btn.active .btn-line:nth-child(2){
-
-  transform:
-  translateY(-9px)
-  rotate(-45deg);
-
-}
-
-/* =========================================
-   MOBILE OVERLAY
-========================================= */
-
-.mobile-overlay{
-
-  position:fixed;
-
-  inset:0;
-
-  z-index:9998;
-
-  background:
-  rgba(30,36,20,.42);
-
-  backdrop-filter:blur(8px);
-
-}
-
-/* =========================================
-   GRAIN TEXTURE
-========================================= */
-
-.grain-overlay{
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-  url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-
-  opacity:.04;
-
-  pointer-events:none;
-
-}
-
-/* =========================================
-   MOBILE MENU PANEL
-========================================= */
-
-.mobile-menu-container{
-
-  position:absolute;
-
-  top:0;
-  right:0;
-
-  width:min(100%,460px);
-
-  height:100vh;
-
-  background:
-
-  linear-gradient(
-    180deg,
-    #3B4626 0%,
-    #2B341D 100%
-  );
-
-  display:flex;
-
-  flex-direction:column;
-
-  padding:120px 42px 40px;
-
-  box-shadow:
-  -20px 0 60px rgba(30,36,20,.18);
-
-}
-
-/* =========================================
-   MOBILE LOGO
-========================================= */
-
-.mobile-logo-area{
-
-  padding:0 0 26px;
-
-  border-bottom:
-  1px solid rgba(255,255,255,.08);
-
-  margin-bottom:24px;
-
-}
-
-.mobile-logo-img{
-
-  height:46px;
-
-  width:auto;
-
-  object-fit:contain;
-
-}
-
-/* =========================================
-   MOBILE LINKS
-========================================= */
-
-.mobile-menu-list{
-
-  flex:1;
-
-}
-
-.mobile-item-wrapper a{
-
-  display:flex;
-
-  align-items:center;
-
-  padding:22px 0;
-
-  border-bottom:
-  1px solid rgba(255,255,255,.08);
-
-  color:#fff;
-
-  transition:var(--transition);
-
-}
-
-.mobile-num{
-
-  font-size:.58rem;
-
-  color:var(--gold);
-
-  opacity:.9;
-
-  margin-right:16px;
-
-  letter-spacing:1px;
-
-}
-
-.mobile-text{
-
-  color:#fff;
-
-  font-size:.82rem;
-
-  font-weight:500;
-
-  letter-spacing:3px;
-
-  text-transform:uppercase;
-
-  transition:var(--transition);
-
-}
-
-.mobile-item-wrapper a:hover .mobile-text{
-
-  color:var(--gold);
-
-  transform:translateX(8px);
-
-}
-
-.chevron{
-
-  width:15px;
-
-  margin-left:auto;
-
-  fill:
-  rgba(255,255,255,.42);
-
-}
-
-/* =========================================
-   MOBILE FOOTER
-========================================= */
-
-.mobile-footer{
-
-  padding-top:28px;
-
-  border-top:
-  1px solid rgba(255,255,255,.08);
-
-}
-
-.footer-label{
-
-  font-size:.58rem;
-
-  letter-spacing:2px;
-
-  text-transform:uppercase;
-
-  color:
-  rgba(255,255,255,.42);
-
-  margin-bottom:14px;
-
-}
-
-.mob-socials{
-
-  display:flex;
-
-  gap:18px;
-
-  flex-wrap:wrap;
-
-}
-
-.mob-socials a{
-
-  color:#fff;
-
-  font-size:.58rem;
-
-  letter-spacing:1px;
-
-  transition:var(--transition);
-
-}
-
-.mob-socials a:hover{
-
-  color:var(--gold);
-
-}
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media(max-width:991px){
-
-  .desktop-menu{
-
-    display:none;
-
-  }
-
-}
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media(max-width:768px){
-
-  .navbar{
-
-    padding:18px 0;
-
-  }
-
-  .navbar-scroll{
-
-    padding:12px 0;
-
-  }
-
-  .logo-img{
-
-    height:38px;
-
-  }
-
-  .navbar-scroll .logo-img{
-
-    height:32px;
-
-  }
-
-  .menu-btn{
-
-    width:26px;
-
-    height:18px;
-
-  }
-
-  .btn-line{
-
-    height:1.2px;
-
-  }
-
-  .mobile-menu-container{
-
-    width:100%;
-
-    padding:95px 24px 30px;
-
-  }
-
-  .mobile-logo-img{
-
-    height:38px;
-
-  }
-
-  .mobile-item-wrapper a{
-
-    padding:18px 0;
-
-  }
-
-  .mobile-text{
-
-    font-size:.72rem;
-
-    letter-spacing:2px;
-
-  }
-
-}
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media(max-width:480px){
-
-  .navbar{
-
-    padding:14px 0;
-
-  }
-
-  .navbar-scroll{
-
-    padding:10px 0;
-
-  }
-
-  .logo-img{
-
-    height:32px;
-
-  }
-
-  .navbar-scroll .logo-img{
-
-    height:28px;
-
-  }
-
-  .mobile-menu-container{
-
-    padding:85px 20px 24px;
-
-  }
-
-  .mobile-logo-img{
-
-    height:34px;
-
-  }
-
-  .mobile-item-wrapper a{
-
-    padding:16px 0;
-
-  }
-
-  .mobile-text{
-
-    font-size:.66rem;
-
-    letter-spacing:1.5px;
-
-  }
-
-  .mobile-num{
-
-    font-size:.48rem;
-
-  }
-
-}
-
-/* =========================================
-   EXTRA SMALL
-========================================= */
-
-@media(max-width:360px){
-
-  .logo-img{
-
-    height:28px;
-
-  }
-
-  .mobile-text{
-
-    font-size:.62rem;
-
-  }
-
-}
-.logo-img{
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* ================================
-   MOBILE
-================================ */
-
-@media (max-width: 768px){
-
-  .logo-img{
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
+@media(max-width: 480px) {
+  .navbar { padding: 20px 0; }
+  .mobile-menu-container { padding: 60px 20px; }
 }

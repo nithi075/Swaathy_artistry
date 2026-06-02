@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400&display=swap');
 
 /* ========================================
-   ROOT COLORS
+   ROOT COLORS (Updated with your Footer Palette)
 ======================================== */
 
 :root {
 
-  --olive:#3B4626;
+  --olive:#6a341f;       /* Footer background color injected here */
 
-  --olive-dark:#2B341D;
+  --olive-dark:#1a0f08;  /* Even darker shade of footer color for depth */
 
   --gold:#C5A377;
 
@@ -228,7 +228,7 @@
   background:
   linear-gradient(
     to top,
-    rgba(43,52,29,.28),
+    rgba(44,26,14,.28), /* Matching with footer color values */
     transparent
   );
 
@@ -248,8 +248,8 @@
 
   linear-gradient(
     145deg,
-    #3B4626,
-    #2B341D
+    #6a341f, /* Updated to match footer background exactly */
+    #1a0f08
   );
 
   display:flex;
@@ -420,7 +420,7 @@
 
   background:var(--gold);
 
-  color:#1E2414;
+  color:#FFFFFF; /* Modified to white for better contrast over gold button background */
 
   transform:
   translateY(-3px);

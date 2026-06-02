@@ -4,42 +4,46 @@ import { motion } from "framer-motion";
 
 const packagesData = [
   {
-    title: "Basic",
-    subtitle: "ONE PHOTOGRAPHER",
+    title: "Bridal Glow",
+    subtitle: "CLASSIC BRIDAL MAKEUP",
+    price: "₹14,999",
+    features: [
+      "HD Bridal Makeup",
+      "Hair Styling",
+      "Saree Draping",
+      "Basic Accessories Setting",
+      "Long Lasting Finish",
+      "Touch-Up Kit"
+    ]
+  },
+
+  {
+    title: "Luxury Bride",
+    subtitle: "HD + AIRBRUSH MAKEUP",
+    price: "₹29,999",
+    features: [
+      "Airbrush Bridal Makeup",
+      "Premium Hair Styling",
+      "Saree / Lehenga Draping",
+      "Lens Assistance",
+      "Premium Accessories Setting",
+      "Long Lasting Waterproof Finish",
+      "Mini Touch-Up Session"
+    ]
+  },
+
+  {
+    title: "Celebrity Signature",
+    subtitle: "BRIDAL + RECEPTION LOOK",
     price: "₹49,999",
     features: [
-      "1 Photographer",
-      "4 Hours of Photo Coverage",
-      "250 Edited Images",
-      "Photo Print Release"
-    ]
-  },
-  {
-    title: "Plus",
-    subtitle: "TWO PHOTOGRAPHERS + VIDEOGRAPHY",
-    price: "₹89,999",
-    features: [
-      "2 Photographers",
-      "1 Cinematographer",
-      "6 Hours of Photo & Video Coverage",
-      "500 Edited Images",
-      "Photo Print Release",
-      "1 Teaser Video",
-      "Full Event Video"
-    ]
-  },
-  {
-    title: "Premium",
-    subtitle: "PHOTO + VIDEO + DRONE COVERAGE",
-    price: "₹1,29,999",
-    features: [
-      "2 Photographers",
-      "2 Cinematographers",
-      "8 Hours of Photo & Video Coverage",
-      "900 Edited Images",
-      "Photo Print Release",
-      "1 Teaser Video",
-      "Full Event Video"
+      "2 Complete Bridal Looks",
+      "HD + Airbrush Makeup",
+      "Luxury Hair Styling",
+      "Reception Glam Look",
+      "Premium Draping",
+      "Skin Prep & Glow Finish",
+      "Full Day Touch-Up Support"
     ]
   }
 ];
@@ -80,7 +84,7 @@ export default function Packages() {
         <p>PRICING</p>
 
         <h2>
-          Event <span>Packages</span>
+          Bridal <span>Packages</span>
         </h2>
 
       </motion.div>
@@ -157,7 +161,7 @@ export default function Packages() {
 
               <span className="event-text">
 
-                /event
+                /bridal
 
               </span>
 
@@ -185,7 +189,7 @@ export default function Packages() {
 
             <button className="package-btn">
 
-              Book Experience ↗
+              Book Bridal Session ↗
 
             </button>
 
